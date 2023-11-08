@@ -1,0 +1,14 @@
+@use "./bootstrap";
+@use "./fontawesome";
+
+@mixin breakpoint-up($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
