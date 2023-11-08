@@ -1,14 +1,17 @@
-{{!-- Bootstrap 5 JS --}}
-<script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-{{!-- script para alternar o tema claro/escuro --}}
-<script type="module" src="./scripts/darkmodetoggle.js"></script>
-{{!-- inicializa os Popovers --}}
-<script type="module">
+{{! Bootstrap 5 JS }}
+<script
+  type="module"
+  src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+></script>
+{{! script para alternar o tema claro/escuro }}
+{{! <script type="module" src="./scripts/darkmodetoggle.js"></script> }}
+{{! inicializa os Popovers }}
+{{! <script type="module">
   const popoverTriggerList = document.querySelectorAll(
     '[data-bs-toggle="popover"]',
   );
   const popoverList = [...popoverTriggerList].map(
     (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
   );
-</script>
+</script> }}
 <script type="module" src="./scripts/main.js"></script>
