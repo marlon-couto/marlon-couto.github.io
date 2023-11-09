@@ -26,10 +26,6 @@ jobs:
 
     - name: List Dist Contents
       run: ls -R ./dist
-      
-    - name: Prepare Publishing Assets
-      run: |
-        rsync -av ./dist/ /home/runner/actions_github_pages_1699555737942
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
