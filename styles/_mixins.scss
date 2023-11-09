@@ -1,11 +1,10 @@
-@mixin breakpointUp($size) {
-  @media screen and (min-width: $size) {
-    @content;
-  }
-}
+$breakpoints-down: (
+  "medium": "768px",
+  "large": "992px",
+);
 
 @mixin breakpointDown($size) {
-  @media screen and (max-width: $size) {
+  @media screen and (max-width: map-get($breakpoints-down, $size)) {
     @content;
   }
 }
