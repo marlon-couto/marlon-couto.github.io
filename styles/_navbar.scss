@@ -15,7 +15,7 @@
       @include textGradient();
     }
 
-    @include breakpointDown(768px) {
+    @include breakpointDown(medium) {
       font-size: calc(1.2rem + 0.6vw) !important;
       margin-left: 0.25rem;
     }
@@ -68,7 +68,7 @@
       }
     }
 
-    @include breakpointDown(768px) {
+    @include breakpointDown(medium) {
       margin-right: 0.5rem;
     }
   }

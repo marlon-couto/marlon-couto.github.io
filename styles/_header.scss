@@ -1,6 +1,6 @@
 .header {
   .typed {
-    // gradiente
+    // texto com gradiente
     // https://cssgradient.io/blog/css-gradient-text/
     @include textGradient();
     height: 100px;
@@ -34,7 +34,7 @@
     height: 410px;
   }
 
-  @include breakpointDown(992px) {
+  @include breakpointDown(large) {
     .row {
       gap: 6rem;
       flex-direction: column-reverse;
@@ -49,7 +49,7 @@
     }
   }
 
-  @include breakpointDown(768px) {
+  @include breakpointDown(medium) {
     .row {
       gap: 2.5rem;
     }
@@ -101,11 +101,11 @@
       animation: 3s animateArrow infinite ease;
     }
 
-    @include breakpointDown(992px) {
-      top: calc(80vh - 830px);
+    @include breakpointDown(large) {
+      top: calc(80vh - 850px);
     }
 
-    @include breakpointDown(768px) {
+    @include breakpointDown(medium) {
       top: calc(80vh - 760px);
     }
   }
