@@ -24,7 +24,6 @@ $(function () {
       "C#",
       "JavaScript",
       "Node.js",
-      "React",
       "Sass",
       "TypeScript",
     ],
