@@ -5,3 +5,8 @@
 @import "./animations";
 @import "./navbar";
 @import "./header";
+@import "./about-me";
+
+html {
+  scroll-behavior: smooth;
+}
