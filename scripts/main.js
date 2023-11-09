@@ -25,7 +25,6 @@ $(function () {
       "JavaScript",
       "jQuery",
       "Node.js",
-      "React",
       "Sass",
       "TypeScript",
     ],
