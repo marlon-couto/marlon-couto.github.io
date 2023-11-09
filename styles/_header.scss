@@ -12,6 +12,16 @@
       -moz-animation: blinkCursor 0.7s infinite;
       animation: blinkCursor 0.7s infinite;
     }
+
+    &::-moz-selection {
+      background-color: var(--bs-primary);
+      -webkit-text-fill-color: var(--bs-light);
+    }
+
+    &::selection {
+      background-color: var(--bs-primary);
+      -webkit-text-fill-color: var(--bs-light);
+    }
   }
 
   .typed-cursor {
