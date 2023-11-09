@@ -17,12 +17,26 @@ $("#navbarNavOverlay").on("click", function () {
 
 $(function () {
   const typed = new Typed("#typed", {
-    strings: ["Bootstrap", "JavaScript", "Angular", "C#", "ASP.NET"],
-    typeSpeed: 75,
-    loop: "infinite",
+    strings: [
+      "Angular",
+      "ASP.NET",
+      "Bootstrap",
+      "C#",
+      "JavaScript",
+      "Node.js",
+      "React",
+      "Sass",
+      "TypeScript",
+    ],
+    typeSpeed: 100,
+    loopCount: 5,
+    loop: true,
     backDelay: 1000,
     backSpeed: 75,
-    showCursor: true,
   });
   typed.start();
+});
+
+$(function () {
+  $("#navbarNavOverlay > input").prop("checked", false);
 });
