@@ -1,4 +1,4 @@
-.header .row {
+.header {
   .typed {
     // gradiente
     // https://cssgradient.io/blog/css-gradient-text/
@@ -25,8 +25,10 @@
   }
 
   @include breakpointDown(992px) {
-    gap: 6rem;
-    flex-direction: column-reverse;
+    .row {
+      gap: 6rem;
+      flex-direction: column-reverse;
+    }
 
     .text-container {
       text-align: center;
@@ -38,16 +40,18 @@
   }
 
   @include breakpointDown(768px) {
-    gap: 3rem;
+    .row {
+      gap: 2.5rem;
+    }
 
     .img-container {
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
       margin-top: 4rem;
 
       img {
-        width: 280px;
-        height: 280px;
+        width: 260px;
+        height: 260px;
       }
     }
 
@@ -58,40 +62,41 @@
     .btn-container {
       flex-direction: column;
       margin-top: 2rem !important;
+      padding-bottom: 4rem;
     }
   }
-}
 
-// seta animada
-// https://codepen.io/kchez/pen/rqvEBB?editors=0100
-.scroll-arrow {
-  position: relative;
-  top: calc(100vh - 800px);
+  // seta animada
+  // https://codepen.io/kchez/pen/rqvEBB?editors=0100
+  .scroll-arrow {
+    position: relative;
+    top: calc(100vh - 800px);
 
-  &::after {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    border-right: 5px solid var(--bs-body-color);
-    border-bottom: 5px solid var(--bs-body-color);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-animation: 3s animateArrow infinite ease;
-    animation: 3s animateArrow infinite ease;
-  }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      border-right: 5px solid var(--bs-body-color);
+      border-bottom: 5px solid var(--bs-body-color);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-animation: 3s animateArrow infinite ease;
+      animation: 3s animateArrow infinite ease;
+    }
 
-  @include breakpointDown(992px) {
-    top: calc(80vh - 830px);
-  }
+    @include breakpointDown(992px) {
+      top: calc(80vh - 830px);
+    }
 
-  @include breakpointDown(768px) {
-    display: none;
+    @include breakpointDown(768px) {
+      top: calc(80vh - 760px);
+    }
   }
 }
