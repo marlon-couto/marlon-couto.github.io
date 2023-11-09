@@ -1,0 +1,97 @@
+.header .row {
+  .typed {
+    // gradiente
+    // https://cssgradient.io/blog/css-gradient-text/
+    @include textGradient();
+    height: 100px;
+
+    &::after {
+      content: "|";
+      display: inline;
+      -webkit-animation: blinkCursor 0.7s infinite;
+      -moz-animation: blinkCursor 0.7s infinite;
+      animation: blinkCursor 0.7s infinite;
+    }
+  }
+
+  .typed-cursor {
+    opacity: 0;
+    display: none;
+  }
+
+  .img-container {
+    width: 410px;
+    height: 410px;
+  }
+
+  @include breakpointDown(992px) {
+    gap: 6rem;
+    flex-direction: column-reverse;
+
+    .text-container {
+      text-align: center;
+    }
+
+    .btn-container {
+      justify-content: center;
+    }
+  }
+
+  @include breakpointDown(768px) {
+    gap: 3rem;
+
+    .img-container {
+      width: 300px;
+      height: 300px;
+      margin-top: 4rem;
+
+      img {
+        width: 280px;
+        height: 280px;
+      }
+    }
+
+    .typed {
+      height: 60px;
+    }
+
+    .btn-container {
+      flex-direction: column;
+      margin-top: 2rem !important;
+    }
+  }
+}
+
+// seta animada
+// https://codepen.io/kchez/pen/rqvEBB?editors=0100
+.scroll-arrow {
+  position: relative;
+  top: calc(100vh - 800px);
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    border-right: 5px solid var(--bs-body-color);
+    border-bottom: 5px solid var(--bs-body-color);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-animation: 3s animateArrow infinite ease;
+    animation: 3s animateArrow infinite ease;
+  }
+
+  @include breakpointDown(992px) {
+    top: calc(80vh - 830px);
+  }
+
+  @include breakpointDown(768px) {
+    display: none;
+  }
+}
