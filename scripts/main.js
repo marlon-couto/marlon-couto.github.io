@@ -23,6 +23,7 @@ $(function () {
       "Bootstrap",
       "C#",
       "JavaScript",
+      "jQuery",
       "Node.js",
       "React",
       "Sass",
