@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marlon Couto | Desenvolvedor Web</title>
+    <script type="module" crossorigin src="/assets/main-607ba136.js"></script>
+    <link rel="stylesheet" href="/assets/index-908a0844.css">
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top pt-2" role="navigation">
+      <div class="container">
+        <a href="#" class="navbar-brand fs-3 fw-semibold">Marlon Couto</a>
+        <div
+          class="z-1 position-relative d-lg-none d-block hamburger mt-1"
+          role="button"
+          aria-label="alternar menu de navegação"
+          id="navbarNavOverlay"
+        >
+          <input type="checkbox" class="d-block position-absolute z-2 opacity-0" />
+          <span class="z-1 d-block position-relative"></span>
+          <span class="z-1 d-block position-relative"></span>
+          <span class="z-1 d-block position-relative"></span>
+        </div>
+        <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbarLinks">
+          <li class="nav-item">
+            <a href="#" class="nav-link link-lg">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-me" class="nav-link link-lg">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link link-lg">Contato</a>
+          </li>
+          <ul class="navbar-nav ms-lg-4 nav-icons">
+            <li class="nav-item">
+              <a
+                href="https://github.com/marlon-couto"
+                target="_blank"
+                class="nav-link"
+                title="me siga no GitHub"
+              >
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://linkedin.com/in/marlon-couto"
+                title="vamos nos conectar no LinkedIn"
+                target="_blank"
+                class="nav-link"
+              >
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="mailto:coutoozair@gmail.com"
+                class="nav-link"
+                title="me envie um email"
+                target="_blank"
+              >
+                <i class="fas fa-inbox fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+    <!-- header -->
+    <header class="header vh-100 d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6 d-flex flex-column justify-content-center text-container"
+          >
+            <h1 class="fw-lighter text-uppercase">
+              Eu sou um desenvolvedor
+            </h1>
+            <h2
+              class="display-1 my-2 fw-bold text-uppercase d-inline-block typed"
+              id="typed"
+            >
+            </h2>
+            <p class="fs-5 fw-light text-secondary">baseado em Salvador, BA.</p>
+            <div class="mt-4 d-flex gap-4 align-items-center btn-container">
+              <a
+                href="#about-me"
+                class="btn btn-primary btn-lg shadow-lg text-uppercase"
+              >Sobre mim</a>
+              <a href="#" class="fs-5 link-secondary text-capitalize">
+                Baixar currículo
+                <i class="fas fa-circle-arrow-down ms-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div
+              class="bg-body rounded-circle img-container d-flex justify-content-center align-items-center shadow-lg"
+            >
+              <img
+                src="assets/profile.jpg"
+                alt=""
+                class="rounded-circle"
+                width="380"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <a class="scroll-arrow" href="#about-me"></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- sobre mim -->
+      <section
+        id="about-me"
+        class="about-me bg-body-secondary py-md-7 py-6 min-vh-100"
+      >
+        <div class="container">
+          <div class="text-center section-title">
+            <h4
+              class="text-capitalize text-bg-primary fs-5 d-inline-block py-1 px-2"
+            >Sobre mim</h4>
+            <h2 class="text-capitalize display-5 mt-2 fw-bold">Me conheça melhor</h2>
+          </div>
+          <div class="row main-content">
+            <div class="col-lg-8 d-flex flex-column justify-content-center">
+              <h3 class="fs-2 fw-normal">Olá, eu me chamo
+                <span class="fw-semibold lh-lg name">Marlon Couto</span>
+              </h3>
+              <p class="lead pe-3 description">
+                Eu sou um desenvolvedor que tem paixão pelo mundo da programação. Eu
+                amo desenvolver sistemas eficientes com interfaces bonitas que
+                entregam verdadeiro valor à pessoa usuária. Realizar sempre um
+                excelente trabalho é meu lema.
+              </p>
+            </div>
+            <div
+              class="col-lg-4 experience-years d-flex flex-column align-items-center justify-content-center"
+            >
+              <p class="year z-1 position-relative">1</p>
+              <p class="fs-4 text-muted d-inline-block mt-n2">anos de experiência</p>
+            </div>
+          </div>
+          <div class="row mt-5 info">
+            <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
+              <h5 class="fs-6 text-muted">Nome:</h5>
+              <p class="lead text-body-emphasis fw-semibold">Marlon Couto</p>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
+              <h5 class="fs-6 text-muted">Email:</h5>
+              <a
+                href="mailto:coutoozair@gmail.com"
+                class="lead link-body-emphasis fw-semibold"
+              >coutoozair@gmail.com</a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
+              <h5 class="fs-6 text-muted">Data de nascimento:</h5>
+              <p class="lead text-body-emphasis fw-semibold">17 de Janeiro de 1991</p>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
+              <h5 class="fs-6 text-muted">Localização:</h5>
+              <p class="lead text-body-emphasis fw-semibold">
+                Salvador, Bahia
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- skills -->
+      <!-- contato -->
+    </main>
+    <!-- footer -->
+    <!-- scripts -->
+    
+    
+    
+  </body>
+</html>
