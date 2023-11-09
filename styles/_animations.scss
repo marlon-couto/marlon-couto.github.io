@@ -1,0 +1,54 @@
+@-webkit-keyframes animateArrow {
+  0%,
+  100% {
+    top: 50px;
+  }
+
+  50% {
+    top: 80px;
+  }
+}
+
+@keyframes animateArrow {
+  0%,
+  100% {
+    top: 50px;
+  }
+
+  50% {
+    top: 80px;
+  }
+}
+
+@-moz-keyframes blinkCursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blinkCursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
