@@ -1,0 +1,74 @@
+.about-me {
+  .section-title {
+    @include breakpointDown(768px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .main-content {
+    height: 50vh;
+
+    @include breakpointDown(992px) {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .name {
+      border-bottom: 4px solid var(--bs-primary);
+
+      @include breakpointDown(768px) {
+        display: inline-block;
+      }
+    }
+
+    .description {
+      line-height: 2;
+
+      @include breakpointDown(992px) {
+        font-size: 1.35rem !important;
+      }
+
+      @include breakpointDown(768px) {
+        font-size: 1.25rem !important;
+        margin-top: 1rem;
+      }
+    }
+
+    .experience-years {
+      .year {
+        font-size: 11rem;
+        line-height: 0.75;
+        top: -10px;
+        left: 34px;
+
+        &::after {
+          content: "";
+          width: 100px;
+          height: 100px;
+          background-color: var(--bs-primary);
+          display: inline-block;
+          border-radius: 50%;
+          position: relative;
+          opacity: 0.75;
+          top: -13px;
+          left: -75px;
+          z-index: -1 !important;
+        }
+      }
+
+      @include breakpointDown(768px) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .info {
+    @include breakpointDown(768px) {
+      margin-top: 20rem !important;
+
+      .col-md-6 {
+        height: 58px;
+      }
+    }
+  }
+}
