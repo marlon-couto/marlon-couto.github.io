@@ -1,0 +1,19 @@
+@mixin breakpointUp($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin breakpointDown($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin textGradient() {
+  background: -webkit-linear-gradient(45deg, $purple, $pink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
