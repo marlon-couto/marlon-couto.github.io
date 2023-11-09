@@ -29,7 +29,6 @@ $(function () {
       "TypeScript",
     ],
     typeSpeed: 100,
-    loopCount: 5,
     loop: true,
     backDelay: 1000,
     backSpeed: 75,
