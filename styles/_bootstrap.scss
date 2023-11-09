@@ -17,6 +17,7 @@ $spacers: (
   7: $spacer * 9,
   8: $spacer * 12,
 ) !default;
+$enable-negative-margins: true;
 
 // tipografia
 $font-family-sans-serif: "Poppins", sans-serif;
@@ -26,6 +27,8 @@ $primary: #9f3efa;
 $secondary: #7a788a;
 $dark: #222;
 $body-bg-dark: $dark;
+$body-secondary-bg: #eeeeee;
+$body-secondary-bg-dark: lighten($dark, 5);
 
 // button
 $btn-border-radius: 0;
