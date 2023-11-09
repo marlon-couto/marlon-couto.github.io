@@ -4,9 +4,6 @@
  * O arquivo será compilado com as alterações feitas aqui.
  */
 
-// tipografia
-$font-family-sans-serif: "Poppins", sans-serif;
-
 // spacers
 $spacer: 1rem !default;
 $spacers: (
@@ -20,5 +17,26 @@ $spacers: (
   7: $spacer * 9,
   8: $spacer * 12,
 ) !default;
+
+// tipografia
+$font-family-sans-serif: "Poppins", sans-serif;
+
+// cores
+$primary: #9f3efa;
+$secondary: #7a788a;
+$dark: #222;
+$body-bg-dark: $dark;
+
+// button
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+$btn-padding-x: 2.5rem;
+$btn-padding-x-sm: 2.5rem;
+$btn-padding-x-lg: 2.5rem;
+
+// navbar
+$navbar-dark-hover-color: lighten($primary, 10);
+$navbar-light-hover-color: $primary;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
