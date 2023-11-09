@@ -106,7 +106,7 @@
     }
 
     @include breakpointDown(medium) {
-      top: calc(80vh - 760px);
+      display: none;
     }
   }
 }
