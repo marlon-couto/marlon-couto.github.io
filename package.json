@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.27",
     "eslint": "^8.52.0",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
