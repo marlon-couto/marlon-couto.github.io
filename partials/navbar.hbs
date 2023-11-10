@@ -2,7 +2,7 @@
   <div class="container">
     <a href="#" class="navbar-brand fs-3 fw-semibold">Marlon Couto</a>
     <div
-      class="z-1 position-relative d-lg-none d-block hamburger mt-1"
+      class="z-1 position-relative d-lg-none d-block navbar__hamburger mt-1"
       role="button"
       aria-label="alternar menu de navegação"
       id="navbarNavOverlay"
@@ -17,12 +17,15 @@
         <a href="#" class="nav-link link-lg">Início</a>
       </li>
       <li class="nav-item">
-        <a href="#about-me" class="nav-link link-lg">Sobre Mim</a>
+        <a href="#aboutMe" class="nav-link link-lg">Sobre Mim</a>
+      </li>
+      <li class="nav-item">
+        <a href="#skills" class="nav-link link-lg">Skills</a>
       </li>
       <li class="nav-item">
         <a href="#contact" class="nav-link link-lg">Contato</a>
       </li>
-      <ul class="navbar-nav ms-lg-4 nav-icons">
+      <ul class="navbar-nav ms-lg-3 nav-icons">
         <li class="nav-item">
           <a
             href="https://github.com/marlon-couto"
@@ -54,6 +57,13 @@
           </a>
         </li>
       </ul>
+      <div class="navbar__toggle navbar-nav ms-lg-3 align-items-center">
+        <label for="themeToggle" class="nav-link">
+          <i class="fas fa-sun fa-2x"></i>
+          <i class="fas fa-moon fa-2x"></i>
+        </label>
+        <input type="checkbox" id="themeToggle" class="opacity-0" />
+      </div>
     </ul>
   </div>
 </nav>
