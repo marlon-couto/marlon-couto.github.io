@@ -1,16 +1,32 @@
 .header {
-  .typed {
+  .row {
+    @include breakpointDown(large) {
+      gap: 6rem;
+      flex-direction: column-reverse;
+    }
+
+    @include breakpointDown(medium) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__txt {
+    @include breakpointDown(large) {
+      text-align: center;
+    }
+  }
+
+  &__typing {
     // texto com gradiente
     // https://cssgradient.io/blog/css-gradient-text/
     @include textGradient();
-    height: 100px;
 
     &::after {
       content: "|";
       display: inline;
-      -webkit-animation: blinkCursor 0.7s infinite;
-      -moz-animation: blinkCursor 0.7s infinite;
-      animation: blinkCursor 0.7s infinite;
+      -webkit-animation: blinkCursor 0.75s infinite;
+      -moz-animation: blinkCursor 0.75s infinite;
+      animation: blinkCursor 0.75s infinite;
     }
 
     &::-moz-selection {
@@ -29,32 +45,23 @@
     display: none;
   }
 
-  .img-container {
-    width: 410px;
-    height: 410px;
-  }
-
-  @include breakpointDown(large) {
-    .row {
-      gap: 6rem;
-      flex-direction: column-reverse;
-    }
-
-    .text-container {
-      text-align: center;
-    }
-
-    .btn-container {
+  &__btn {
+    @include breakpointDown(large) {
       justify-content: center;
     }
+
+    @include breakpointDown(medium) {
+      flex-direction: column;
+      margin-top: 2rem !important;
+      padding-bottom: 4rem;
+    }
   }
 
-  @include breakpointDown(medium) {
-    .row {
-      gap: 2.5rem;
-    }
+  &__img {
+    width: 410px;
+    height: 410px;
 
-    .img-container {
+    @include breakpointDown(medium) {
       width: 280px;
       height: 280px;
       margin-top: 4rem;
@@ -64,23 +71,25 @@
         height: 260px;
       }
     }
-
-    .typed {
-      height: 60px;
-    }
-
-    .btn-container {
-      flex-direction: column;
-      margin-top: 2rem !important;
-      padding-bottom: 4rem;
-    }
   }
 
   // seta animada
   // https://codepen.io/kchez/pen/rqvEBB?editors=0100
-  .scroll-arrow {
+  &__arrow {
     position: relative;
     top: calc(100vh - 800px);
+
+    @include breakpointDown(large) {
+      top: calc(80vh - 850px);
+    }
+
+    @include breakpointDown(medium) {
+      top: calc(80vh - 780px);
+    }
+
+    @include breakpointDown(small) {
+      top: calc(80vh - 740px);
+    }
 
     &::after {
       position: absolute;
@@ -99,14 +108,13 @@
       transform: rotate(45deg);
       -webkit-animation: 3s animateArrow infinite ease;
       animation: 3s animateArrow infinite ease;
-    }
 
-    @include breakpointDown(large) {
-      top: calc(80vh - 850px);
-    }
-
-    @include breakpointDown(medium) {
-      display: none;
+      @include breakpointDown(small) {
+        width: 15px;
+        height: 15px;
+        border-right: 4px solid var(--bs-body-color);
+        border-bottom: 4px solid var(--bs-body-color);
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   transition: all 0.5s ease-in-out;
 
   &.navbar-sticky {
-    background-color: var(--bs-body-bg);
+    background-color: var(--bs-secondary-bg);
     box-shadow:
       0 4px 6px -1px rgb(0 0 0 / 0.1),
       0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -11,19 +11,23 @@
   .navbar-brand {
     transition: -webkit-fill-color 1s ease-in-out;
 
-    &:hover {
-      @include textGradient();
-    }
-
     @include breakpointDown(medium) {
       font-size: calc(1.2rem + 0.6vw) !important;
       margin-left: 0.25rem;
+    }
+
+    &:hover {
+      @include textGradient();
     }
   }
 
   // menu hambúrguer animado
   // https://codepen.io/erikterwan/pen/EVzeRP
-  .hamburger {
+  &__hamburger {
+    @include breakpointDown(medium) {
+      margin-right: 0.5rem;
+    }
+
     input {
       width: 40px;
       height: 32px;
@@ -35,7 +39,6 @@
       &:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -16px);
-        background-color: var(--bs-light);
 
         &:nth-last-child(3) {
           opacity: 0;
@@ -67,17 +70,13 @@
         transform-origin: 0% 100%;
       }
     }
-
-    @include breakpointDown(medium) {
-      margin-right: 0.5rem;
-    }
   }
 
   .link-lg {
     font-size: 1.25rem !important;
   }
 
-  .overlay {
+  &__overlay {
     display: flex !important;
     position: absolute;
     top: 0;
@@ -86,13 +85,13 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: var(--bs-dark);
+    background-color: var(--bs-body-bg);
     margin-top: 0 !important;
     transition: all 0.5s ease-in-out; // FIX: melhorar transição
 
     .nav-link,
     .nav-icons {
-      color: var(--bs-light);
+      color: var(--bs-body-color);
 
       &:active {
         color: var(--bs-primary) !important;
@@ -103,6 +102,23 @@
       flex-direction: row !important;
       gap: 1.25rem;
       margin-top: 1.25rem;
+    }
+  }
+
+  &__toggle {
+    width: 48px;
+
+    label {
+      cursor: pointer;
+    }
+
+    .animated-icon {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    input {
+      position: absolute;
+      top: -20px;
     }
   }
 }

@@ -38,8 +38,4 @@ $btn-padding-x: 2.5rem;
 $btn-padding-x-sm: 2.5rem;
 $btn-padding-x-lg: 2.5rem;
 
-// navbar
-$navbar-dark-hover-color: lighten($primary, 10);
-$navbar-light-hover-color: $primary;
-
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

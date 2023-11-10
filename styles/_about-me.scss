@@ -1,11 +1,15 @@
 .about-me {
-  .section-title {
+  &__title {
+    .about-me--animated & {
+      animation: slideUp 1s ease;
+    }
+
     @include breakpointDown(medium) {
       margin-bottom: 3rem;
     }
   }
 
-  .main-content {
+  &__content {
     height: 50vh;
 
     @include breakpointDown(large) {
@@ -16,9 +20,15 @@
     @include breakpointDown(medium) {
       height: 100%;
     }
+
+    h3 {
+      .about-me--animated & {
+        animation: slideLeft 1s ease-out;
+      }
+    }
   }
 
-  .name {
+  &__name {
     border-bottom: 4px solid var(--bs-primary);
 
     @include breakpointDown(medium) {
@@ -26,8 +36,12 @@
     }
   }
 
-  .description {
+  &__description {
     line-height: 2;
+
+    .about-me--animated & {
+      animation: slideLeft 1.5s ease-out;
+    }
 
     @include breakpointDown(large) {
       font-size: 1.35rem !important;
@@ -39,8 +53,18 @@
     }
   }
 
-  .experience-years {
-    .year {
+  &__experience {
+    @include breakpointDown(medium) {
+      margin-top: 2rem;
+    }
+  }
+
+  &.about-me--animated .experience {
+    animation: slideRight 1s ease;
+  }
+
+  .experience {
+    &__year {
       font-size: 11rem;
       line-height: 0.75;
       top: -10px;
@@ -60,13 +84,13 @@
         z-index: -1 !important;
       }
     }
-
-    @include breakpointDown(medium) {
-      margin-top: 2rem;
-    }
   }
 
-  .info {
+  &__info {
+    .about-me--animated & {
+      animation: slideBottom 1s ease;
+    }
+
     @include breakpointDown(large) {
       margin-top: 4rem !important;
     }
