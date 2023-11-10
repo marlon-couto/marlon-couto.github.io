@@ -6,6 +6,7 @@
 @import "./navbar";
 @import "./header";
 @import "./about-me";
+@import "./skills";
 
 * {
   box-sizing: border-box;
@@ -39,4 +40,23 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+  }
 }

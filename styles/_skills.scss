@@ -1,0 +1,54 @@
+.skills {
+  &__title {
+    .skills--animated & {
+      animation: slideUp 1s ease 0.25s;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  &__resume {
+    @include breakpointDown(large) {
+      text-align: center;
+      margin-bottom: 5.5rem;
+    }
+
+    @include breakpointDown(medium) {
+      margin-bottom: 4.5rem;
+    }
+
+    p {
+      .skills--animated & {
+        animation: slideLeft 1s ease-out 0.5s;
+        animation-fill-mode: backwards;
+      }
+    }
+
+    .btn {
+      .skills--animated & {
+        animation: slideLeft 1s ease-out 0.75s;
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+
+  &__techs {
+    .skills--animated & {
+      animation: slideRight 1s ease-out 0.5s;
+      animation-fill-mode: backwards;
+    }
+
+    .card {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: var(--bs-secondary-bg);
+      }
+    }
+  }
+}

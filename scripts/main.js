@@ -10,14 +10,6 @@ $(window).on("scroll", function () {
   }
 });
 
-$("#navbarNavOverlay").on("click", function () {
-  $("#navbarLinks").toggleClass("navbar__overlay");
-});
-
-$(function () {
-  $("#navbarNavOverlay > input").prop("checked", false);
-});
-
 function getTheme() {
   const theme = localStorage.getItem("theme");
   if (theme) {
@@ -65,6 +57,19 @@ $("#themeToggle").on("click", function () {
   $("html").attr("data-bs-theme", getTheme());
 });
 
+$("#navbarNavOverlay").on("click", function () {
+  $("#navbarLinks").toggleClass("navbar__overlay");
+});
+
+$(function () {
+  $("#navbarNavOverlay > input").prop("checked", false);
+});
+
+$("#navbarLinks > .nav-item").on("click", function () {
+  $("#navbarNavOverlay > input").prop("checked", false);
+  $("#navbarLinks").removeClass("navbar__overlay");
+});
+
 $(function () {
   const typed = new Typed("#typedText", {
     strings: [
@@ -96,5 +101,12 @@ $(window).on("scroll", function () {
   const aboutMePosition = $("#aboutMe").offset().top;
   if (getWindowPosition() > aboutMePosition) {
     $("#aboutMe").addClass("about-me--animated");
+  }
+});
+
+$(window).on("scroll", function () {
+  const skillsPosition = $("#skills").offset().top;
+  if (getWindowPosition() > skillsPosition) {
+    $("#skills").addClass("skills--animated");
   }
 });
