@@ -1,6 +1,5 @@
 import $ from "jquery";
 import Typed from "typed.js";
-
 import "../styles/index.scss";
 
 $(window).on("scroll", function () {
@@ -12,11 +11,62 @@ $(window).on("scroll", function () {
 });
 
 $("#navbarNavOverlay").on("click", function () {
-  $("#navbarLinks").toggleClass("overlay");
+  $("#navbarLinks").toggleClass("navbar__overlay");
 });
 
 $(function () {
-  const typed = new Typed("#typed", {
+  $("#navbarNavOverlay > input").prop("checked", false);
+});
+
+function getTheme() {
+  const theme = localStorage.getItem("theme");
+  if (theme) {
+    return theme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function showToggleThemeIcons() {
+  if (getTheme() === "dark") {
+    $("i.fa-sun").show();
+    $("i.fa-sun").addClass("animated-icon");
+    $("i.fa-moon").hide();
+  } else {
+    $("i.fa-sun").hide();
+    $("i.fa-moon").show();
+    $("i.fa-moon").addClass("animated-icon");
+  }
+}
+
+$(function () {
+  if (getTheme() === "dark") {
+    $("#themeToggle").prop("checked", true);
+    localStorage.setItem("theme", "dark");
+    showToggleThemeIcons();
+  } else {
+    $("#themeToggle").prop("checked", false);
+    localStorage.setItem("theme", "light");
+    showToggleThemeIcons();
+  }
+});
+
+$("#themeToggle").on("click", function () {
+  if (getTheme() === "dark") {
+    localStorage.setItem("theme", "light");
+    showToggleThemeIcons();
+  } else {
+    localStorage.setItem("theme", "dark");
+    showToggleThemeIcons();
+  }
+
+  $("html").attr("data-bs-theme", getTheme());
+});
+
+$(function () {
+  const typed = new Typed("#typedText", {
     strings: [
       "Angular",
       "ASP.NET",
@@ -36,6 +86,15 @@ $(function () {
   typed.start();
 });
 
-$(function () {
-  $("#navbarNavOverlay > input").prop("checked", false);
+function getWindowPosition() {
+  const windowHeight = $(window).height();
+  const scrollPosition = $(window).scrollTop();
+  return windowHeight + scrollPosition;
+}
+
+$(window).on("scroll", function () {
+  const aboutMePosition = $("#aboutMe").offset().top;
+  if (getWindowPosition() > aboutMePosition) {
+    $("#aboutMe").addClass("about-me--animated");
+  }
 });
