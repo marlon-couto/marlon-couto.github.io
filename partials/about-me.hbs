@@ -3,12 +3,14 @@
   class="about-me bg-body-secondary pt-md-7 pt-6 pb-5 pb-md-6 min-vh-100"
 >
   <div class="container">
+    {{! TÍTULO }}
     <div class="text-center about-me__title">
       <h4
         class="text-capitalize text-bg-primary fs-5 d-inline-block py-1 px-2"
       >Sobre mim</h4>
       <h2 class="text-capitalize display-5 mt-2 fw-bold">Me conheça melhor</h2>
     </div>
+    {{! CONTEÚDO }}
     <div class="row about-me__content">
       <div class="col-lg-8 d-flex flex-column justify-content-center">
         <h3 class="fs-2 fw-normal">Olá, eu me chamo
@@ -21,6 +23,7 @@
           que faço.
         </p>
       </div>
+      {{! EXPERIÊNCIA }}
       <div
         class="col-lg-4 about-me__experience d-flex flex-column align-items-center justify-content-center"
       >
@@ -32,6 +35,7 @@
         </div>
       </div>
     </div>
+    {{! INFORMAÇÕES }}
     <div class="row mt-5 about-me__info">
       <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
         <h5 class="fs-6 text-muted">Nome:</h5>
@@ -42,7 +46,10 @@
         <a
           href="mailto:coutoozair@gmail.com"
           class="lead link-body-emphasis fw-semibold"
-        >coutoozair@gmail.com</a>
+          target="_blank"
+        >
+          coutoozair@gmail.com
+        </a>
       </div>
       <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
         <h5 class="fs-6 text-muted">Data de nascimento:</h5>
