@@ -1,0 +1,44 @@
+.contact {
+  &__title {
+    .contact--animated & {
+      @include animateUp();
+    }
+  }
+
+  &__content {
+    @include breakpointDown(large) {
+      gap: 5.5rem;
+    }
+  }
+
+  &__message {
+    @include breakpointDown(large) {
+      text-align: center;
+    }
+
+    .contact--animated & {
+      @include animateLeft();
+    }
+  }
+
+  &__info {
+    .contact--animated & {
+      @include animateLeft(0.75s);
+    }
+  }
+
+  &__form {
+    .contact--animated & {
+      @include animateRight();
+    }
+
+    .form-control {
+      border-width: 2px;
+    }
+
+    .form-control:focus {
+      box-shadow: none !important;
+      border-color: var(--bs-primary);
+    }
+  }
+}
