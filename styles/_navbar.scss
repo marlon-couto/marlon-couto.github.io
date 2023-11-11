@@ -9,15 +9,9 @@
   }
 
   .navbar-brand {
-    transition: -webkit-fill-color 1s ease-in-out;
-
     @include breakpointDown(medium) {
       font-size: calc(1.2rem + 0.6vw) !important;
       margin-left: 0.25rem;
-    }
-
-    &:hover {
-      @include textGradient($purple, $pink);
     }
   }
 
