@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top pt-2" role="navigation">
   <div class="container">
     <a href="#" class="navbar-brand fs-3 fw-semibold">Marlon Couto</a>
+    {{! MENU HAMBÚRGUER }}
     <div
       class="z-1 position-relative d-lg-none d-block navbar__hamburger mt-1"
       role="button"
@@ -12,6 +13,7 @@
       <span class="z-1 d-block position-relative"></span>
       <span class="z-1 d-block position-relative"></span>
     </div>
+    {{! LINKS DE NAVEGAÇÃO }}
     <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbarLinks">
       <li class="nav-item">
         <a href="#" class="nav-link link-lg">Início</a>
@@ -25,12 +27,13 @@
       <li class="nav-item">
         <a href="#contact" class="nav-link link-lg">Contato</a>
       </li>
+      {{! LINKS SOCIAIS }}
       <ul class="navbar-nav ms-lg-3 nav-icons">
         <li class="nav-item">
           <a
             href="https://github.com/marlon-couto"
             target="_blank"
-            class="nav-link"
+            class="nav-link github-icon"
             title="me siga no GitHub"
           >
             <i class="fab fa-github fa-2x"></i>
@@ -41,7 +44,7 @@
             href="https://linkedin.com/in/marlon-couto"
             title="vamos nos conectar no LinkedIn"
             target="_blank"
-            class="nav-link"
+            class="nav-link linkedin-icon"
           >
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
@@ -57,6 +60,7 @@
           </a>
         </li>
       </ul>
+      {{! THEME TOGGLE SWITCH }}
       <div class="navbar__toggle navbar-nav ms-lg-3 align-items-center">
         <label for="themeToggle" class="nav-link">
           <i class="fas fa-sun fa-2x"></i>
