@@ -1,3 +1,5 @@
+// Faz a seta subir e descer.
+
 @-webkit-keyframes animateArrow {
   0%,
   100% {
@@ -19,6 +21,8 @@
     top: 80px;
   }
 }
+
+// Faz o cursor piscar.
 
 @-moz-keyframes blinkCursor {
   0%,
@@ -53,19 +57,28 @@
   }
 }
 
-@keyframes slideRight {
+// Cria um efeito de transição de transparente par opaco.
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateX(100px);
-  }
-
-  80% {
-    transform: translateX(-10px);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0);
+  }
+}
+
+// Cria efeitos animados de deslizamento.
+
+@keyframes slideBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -85,15 +98,19 @@
   }
 }
 
-@keyframes slideBottom {
+@keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -106,15 +123,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }

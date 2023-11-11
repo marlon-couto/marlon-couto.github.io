@@ -17,9 +17,10 @@
   }
 
   &__typing {
-    // texto com gradiente
+    // Texto com efeito gradiente.
+    // Usei a referência abaixo como inspiração.
     // https://cssgradient.io/blog/css-gradient-text/
-    @include textGradient();
+    @include textGradient($purple, $pink);
 
     &::after {
       content: "|";
@@ -73,7 +74,8 @@
     }
   }
 
-  // seta animada
+  // Seta Animada.
+  // Usei a referência abaixo para criar minha própria implementação.
   // https://codepen.io/kchez/pen/rqvEBB?editors=0100
   &__arrow {
     position: relative;

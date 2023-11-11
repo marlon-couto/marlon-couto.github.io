@@ -4,7 +4,7 @@
  * O arquivo será compilado com as alterações feitas aqui.
  */
 
-// spacers
+// Espaçamento
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
@@ -19,10 +19,10 @@ $spacers: (
 ) !default;
 $enable-negative-margins: true;
 
-// tipografia
+// Tipografia
 $font-family-sans-serif: "Poppins", sans-serif;
 
-// cores
+// Cores
 $primary: #9f3efa;
 $secondary: #7a788a;
 $dark: #222;
@@ -30,7 +30,7 @@ $body-bg-dark: $dark;
 $body-secondary-bg: #eeeeee;
 $body-secondary-bg-dark: lighten($dark, 5);
 
-// button
+// Botões
 $btn-border-radius: 0;
 $btn-border-radius-sm: 0;
 $btn-border-radius-lg: 0;

@@ -1,8 +1,7 @@
 .about-me {
   &__title {
     .about-me--animated & {
-      animation: slideUp 1s ease 0.25s;
-      animation-fill-mode: backwards;
+      @include animateUp();
     }
 
     @include breakpointDown(medium) {
@@ -24,8 +23,7 @@
 
     h3 {
       .about-me--animated & {
-        animation: slideLeft 1s ease-out 0.5s;
-        animation-fill-mode: backwards;
+        @include animateLeft();
       }
     }
   }
@@ -40,8 +38,7 @@
 
   &__description {
     .about-me--animated & {
-      animation: slideLeft 1.5s ease-out 0.75s;
-      animation-fill-mode: backwards;
+      @include animateLeft(0.75s);
     }
 
     @include breakpointDown(large) {
@@ -61,8 +58,7 @@
   }
 
   &.about-me--animated .experience {
-    animation: slideRight 1s ease 1s;
-    animation-fill-mode: backwards;
+    @include animateRight();
   }
 
   .experience {
@@ -90,8 +86,7 @@
 
   &__info {
     .about-me--animated & {
-      animation: slideBottom 1s ease 0.75s;
-      animation-fill-mode: backwards;
+      @include animateBottom();
     }
 
     @include breakpointDown(large) {

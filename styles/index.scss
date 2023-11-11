@@ -1,12 +1,14 @@
 @use "./bootstrap";
 @use "./fontawesome";
+// Importa os partials do Sass e os adiciona ao namespace.
 @import "./variables";
-@import "./mixins";
 @import "./animations";
+@import "./mixins";
 @import "./navbar";
 @import "./header";
 @import "./about-me";
 @import "./skills";
+@import "./contact";
 
 * {
   box-sizing: border-box;
@@ -16,8 +18,10 @@
 
 html {
   scroll-behavior: smooth;
-  transition: background 1s ease-in;
+  transition: background 1s ease-in; // Torna a transição de tema claro/escuro mais suave.
 }
+
+// Altera o comportamento padrão da seleção de texto.
 
 ::-moz-selection {
   color: var(--bs-light);
@@ -28,6 +32,8 @@ html {
   color: var(--bs-light);
   background-color: var(--bs-primary);
 }
+
+// Personaliza a barra de rolagem.
 
 body::-webkit-scrollbar {
   width: 1em;
@@ -42,6 +48,7 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
 }
 
+// Adiciona efeitos de transição aos botões.
 .btn {
   &:link,
   &:visited {

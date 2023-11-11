@@ -1,8 +1,7 @@
 .skills {
   &__title {
     .skills--animated & {
-      animation: slideUp 1s ease 0.25s;
-      animation-fill-mode: backwards;
+      @include animateUp();
     }
   }
 
@@ -18,23 +17,20 @@
 
     p {
       .skills--animated & {
-        animation: slideLeft 1s ease-out 0.5s;
-        animation-fill-mode: backwards;
+        @include animateLeft();
       }
     }
 
     .btn {
       .skills--animated & {
-        animation: slideLeft 1s ease-out 0.75s;
-        animation-fill-mode: backwards;
+        @include animateLeft(0.75s);
       }
     }
   }
 
   &__techs {
     .skills--animated & {
-      animation: slideRight 1s ease-out 0.5s;
-      animation-fill-mode: backwards;
+      @include animateRight();
     }
 
     .card {

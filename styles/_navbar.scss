@@ -17,11 +17,12 @@
     }
 
     &:hover {
-      @include textGradient();
+      @include textGradient($purple, $pink);
     }
   }
 
-  // menu hambúrguer animado
+  // Menu hambúrguer animado.
+  // Usei a referência abaixo mais algumas outras de buscas no Google.
   // https://codepen.io/erikterwan/pen/EVzeRP
   &__hamburger {
     @include breakpointDown(medium) {
