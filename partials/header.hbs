@@ -1,6 +1,7 @@
 <header class="header vh-100 d-flex align-items-center">
   <div class="container">
     <div class="row">
+      {{! CONTEÚDO DA ESQUERDA }}
       <div
         class="col-lg-6 d-flex flex-column justify-content-center header__txt"
       >
@@ -15,12 +16,17 @@
         <p class="fs-5 fw-light text-secondary">baseado em Salvador, BA.</p>
         <div class="mt-4 d-flex gap-4 align-items-center header__btn">
           <a href="#aboutMe" class="btn btn-primary btn-lg">Sobre mim</a>
-          <a href="#" class="fs-5 link-secondary text-capitalize">
+          <a
+            href="/MarlonCurriculum.pdf"
+            download
+            class="fs-5 link-secondary text-capitalize"
+          >
             Baixar currículo
             <i class="fas fa-circle-arrow-down ms-2"></i>
           </a>
         </div>
       </div>
+      {{! CONTEÚDO DA DIREITA }}
       <div class="col-lg-6 d-flex justify-content-center align-items-center">
         <div
           class="bg-body rounded-circle header__img d-flex justify-content-center align-items-center shadow-lg"
@@ -34,6 +40,7 @@
         </div>
       </div>
     </div>
+    {{! SETA ANIMADA }}
     <div class="row mt-3">
       <a class="header__arrow" href="#aboutMe"></a>
     </div>
