@@ -31,12 +31,18 @@
         <div
           class="bg-body rounded-circle header__img d-flex justify-content-center align-items-center shadow-lg"
         >
-          <img
-            src="assets/profile.jpg"
-            alt=""
-            class="rounded-circle"
-            width="380"
-          />
+          <picture>
+            <source
+              srcset="/assets/profile_380x380.jpg"
+              media="(min-width: 768px)"
+            />
+            <img
+              loading="lazy"
+              src="/assets/profile_260x260.jpg"
+              alt="Um rapaz sorrindo com camiseta verde. Ao fundo, um parque com árvores."
+              class="rounded-circle"
+            />
+          </picture>
         </div>
       </div>
     </div>
