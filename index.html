@@ -11,8 +11,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marlon Couto | Desenvolvedor Web</title>
-    <script type="module" crossorigin src="/assets/main-06401999.js"></script>
-    <link rel="stylesheet" href="/assets/index-a06ecf5d.css">
+    <script type="module" crossorigin src="/assets/main-5a68d2aa.js"></script>
+    <link rel="stylesheet" href="/assets/index-0a1ada60.css">
   </head>
   <body>
     <!-- NAVBAR -->
@@ -117,12 +117,18 @@
             <div
               class="bg-body rounded-circle header__img d-flex justify-content-center align-items-center shadow-lg"
             >
-              <img
-                src="assets/profile.jpg"
-                alt=""
-                class="rounded-circle"
-                width="380"
-              />
+              <picture>
+                <source
+                  srcset="/assets/profile_380x380.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  loading="lazy"
+                  src="/assets/profile_260x260.jpg"
+                  alt="Um rapaz sorrindo com camiseta verde. Ao fundo, um parque com árvores."
+                  class="rounded-circle"
+                />
+              </picture>
             </div>
           </div>
         </div>
