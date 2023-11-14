@@ -24,9 +24,9 @@
 // quando a tela está abaixo de grande, médio ou pequeno.
 
 $breakpoints-down: (
-  "small": "576px",
-  "medium": "768px",
-  "large": "992px",
+  "small": "36rem",
+  "medium": "48rem",
+  "large": "62rem",
 );
 
 @mixin breakpointDown($size) {

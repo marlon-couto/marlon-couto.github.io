@@ -4,8 +4,8 @@
   &.navbar-sticky {
     background-color: var(--bs-secondary-bg);
     box-shadow:
-      0 4px 6px -1px rgb(0 0 0 / 0.1),
-      0 2px 4px -2px rgb(0 0 0 / 0.1);
+      0 0.25rem 0.375rem -0.0625rem rgb(0 0 0 / 0.1),
+      0 0.125rem 0.25rem -0.125rem rgb(0 0 0 / 0.1);
   }
 
   .navbar-brand {
@@ -24,16 +24,16 @@
     }
 
     input {
-      width: 40px;
-      height: 32px;
-      top: -7px;
-      right: -5px;
+      width: 2.5rem;
+      height: 2rem;
+      top: -0.4375rem;
+      right: -0.3125rem;
       cursor: pointer;
       -webkit-touch-callout: none;
 
       &:checked ~ span {
         opacity: 1;
-        transform: rotate(45deg) translate(-2px, -16px);
+        transform: rotate(45deg) translate(-0.125rem, -1rem);
 
         &:nth-last-child(3) {
           opacity: 0;
@@ -41,16 +41,16 @@
         }
 
         &:nth-last-child(2) {
-          transform: rotate(-45deg) translate(-2px, 16px);
+          transform: rotate(-45deg) translate(-0.125rem, 1rem);
         }
       }
     }
 
     span {
-      width: 30px;
-      height: 2px;
-      margin-bottom: 6px;
-      transform-origin: 4px 0px;
+      width: 1.875rem;
+      height: 0.125rem;
+      margin-bottom: 0.375rem;
+      transform-origin: 0.25rem 0rem;
       transition:
         transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
         background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
@@ -100,7 +100,7 @@
   }
 
   &__toggle {
-    width: 48px;
+    width: 3rem;
 
     label {
       cursor: pointer;
@@ -112,7 +112,7 @@
 
     input {
       position: absolute;
-      top: -20px;
+      top: -1.25rem;
     }
   }
 }

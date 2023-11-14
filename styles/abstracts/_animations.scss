@@ -3,22 +3,22 @@
 @-webkit-keyframes animateArrow {
   0%,
   100% {
-    top: 50px;
+    top: 3.125rem;
   }
 
   50% {
-    top: 80px;
+    top: 5rem;
   }
 }
 
 @keyframes animateArrow {
   0%,
   100% {
-    top: 50px;
+    top: 3.125rem;
   }
 
   50% {
-    top: 80px;
+    top: 5rem;
   }
 }
 
@@ -73,7 +73,7 @@
 @keyframes slideBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(1.875rem);
   }
 
   100% {
@@ -85,11 +85,11 @@
 @keyframes slideLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-6.25rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(0.625rem);
   }
 
   100% {
@@ -101,11 +101,11 @@
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(6.25rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-0.625rem);
   }
 
   100% {
@@ -117,7 +117,7 @@
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-1.875rem);
   }
 
   100% {

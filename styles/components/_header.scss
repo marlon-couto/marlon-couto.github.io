@@ -59,12 +59,12 @@
   }
 
   &__img {
-    width: 410px;
-    height: 410px;
+    width: 25.625rem;
+    height: 25.625rem;
 
     @include breakpointDown(medium) {
-      width: 280px;
-      height: 280px;
+      width: 17.5rem;
+      height: 17.5rem;
       margin-top: 4rem;
     }
   }
@@ -73,44 +73,36 @@
   // Usei a referência abaixo para criar minha própria implementação.
   // https://codepen.io/kchez/pen/rqvEBB?editors=0100
   &__arrow {
-    position: relative;
-    top: calc(100vh - 800px);
-
-    @include breakpointDown(large) {
-      top: calc(80vh - 850px);
-    }
+    bottom: 8rem;
+    left: 50%;
 
     @include breakpointDown(medium) {
-      top: calc(80vh - 780px);
+      bottom: 7rem;
     }
 
-    @include breakpointDown(small) {
-      top: calc(80vh - 740px);
-    }
-
-    &::after {
+    a::after {
       position: absolute;
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 1.25rem;
+      height: 1.25rem;
       margin: auto;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       z-index: 10;
-      border-right: 5px solid var(--bs-body-color);
-      border-bottom: 5px solid var(--bs-body-color);
+      border-right: 0.3125rem solid var(--bs-body-color);
+      border-bottom: 0.3125rem solid var(--bs-body-color);
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
       -webkit-animation: 3s animateArrow infinite ease;
       animation: 3s animateArrow infinite ease;
 
       @include breakpointDown(small) {
-        width: 15px;
-        height: 15px;
-        border-right: 4px solid var(--bs-body-color);
-        border-bottom: 4px solid var(--bs-body-color);
+        width: 0.9375rem;
+        height: 0.9375rem;
+        border-right: 0.25rem solid var(--bs-body-color);
+        border-bottom: 0.25rem solid var(--bs-body-color);
       }
     }
   }
