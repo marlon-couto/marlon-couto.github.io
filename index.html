@@ -379,7 +379,7 @@
               <form
                 class="contact__form"
                 id="contactForm"
-                novalidate
+                novalidate="true"
                 action="https://formspree.io/f/xoqozazw"
                 method="post"
               >
@@ -389,7 +389,7 @@
                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
                     placeholder="Qual seu nome?"
                     id="inputName"
-                    required
+                    required="true"
                     minlength="2"
                     pattern="^[a-zA-Z]+$"
                     name="name"
@@ -402,7 +402,7 @@
                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
                     placeholder="Qual seu e-mail?"
                     id="inputEmail"
-                    required
+                    required="true"
                     name="email"
                   />
                   <div class="invalid-feedback">O email deve seguir o seguinte
@@ -414,7 +414,7 @@
                     placeholder="Como posso te ajudar?"
                     rows="6"
                     id="inputMessage"
-                    required
+                    required="true"
                     minlength="10"
                     name="message"
                   ></textarea>
@@ -426,6 +426,7 @@
                     class="btn btn-primary"
                     type="submit"
                     id="contactBtn"
+                    disabled="true"
                   >Enviar</button>
                 </div>
               </form>
