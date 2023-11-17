@@ -2,7 +2,7 @@ import $ from "jquery";
 import Typed from "typed.js";
 import "../styles/index.scss";
 
-// Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela acima do topo.
+// Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela a partir do topo.
 $(window).on("scroll", function () {
   if (window.scrollY > 50) {
     $(".navbar").addClass("navbar-sticky");
@@ -11,7 +11,7 @@ $(window).on("scroll", function () {
   }
 });
 
-// Retorna o tema de cor atual (light ou dark).
+// Retorna o tema de cores atual (light ou dark).
 function getTheme() {
   const theme = localStorage.getItem("theme");
   if (theme) {
@@ -36,7 +36,7 @@ function showToggleThemeIcons() {
 
 // Marca/desmarca a caixa de seleção que indica o tema atual,
 // salva o tema no armazenamento local do navegador
-// e adiciona um efeito de transição ao ícone
+// e adiciona um efeito de transição ao ícone.
 $(function () {
   if (getTheme() === "dark") {
     $("#themeToggle").prop("checked", true);
@@ -137,7 +137,7 @@ $(window).on("scroll", function () {
   }
 });
 
-// Habilita o botão de envio apenas se o formulário for válido
+// Habilita o botão de envio apenas se o formulário for válido.
 $("#inputName, #inputEmail, #inputMessage").on("input", function () {
   const nameRegex = new RegExp(/^[a-zA-Z]+$/);
   let isValidName = nameRegex.test($("#inputName").val());
@@ -157,7 +157,7 @@ $("#inputName, #inputEmail, #inputMessage").on("input", function () {
   }
 });
 
-// Mostra mensagens de validação no formulário
+// Mostra mensagens de validação no formulário.
 $("#inputMessage").on("change", function () {
   $("#contactForm").addClass("was-validated");
 });
