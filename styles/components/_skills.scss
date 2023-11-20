@@ -1,36 +1,38 @@
+@use "../abstracts" as abs;
+
 .skills {
   &__title {
     .skills--animated & {
-      @include animateUp();
+      @include abs.animateUp();
     }
   }
 
   &__resume {
-    @include breakpointDown(large) {
+    @include abs.breakpointDown(large) {
       text-align: center;
       margin-bottom: 5.5rem;
     }
 
-    @include breakpointDown(medium) {
+    @include abs.breakpointDown(medium) {
       margin-bottom: 4.5rem;
     }
 
     p {
       .skills--animated & {
-        @include animateLeft();
+        @include abs.animateLeft();
       }
     }
 
     .btn {
       .skills--animated & {
-        @include animateLeft(0.75s);
+        @include abs.animateLeft(0.75s);
       }
     }
   }
 
   &__techs {
     .skills--animated & {
-      @include animateRight();
+      @include abs.animateRight();
     }
 
     .card {

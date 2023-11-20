@@ -8,6 +8,52 @@ $(window).on("scroll", function () {
     $(".navbar").addClass("navbar-sticky");
   } else {
     $(".navbar").removeClass("navbar-sticky");
+    $("#navbarLinks .nav-link.inactive").removeClass("inactive");
+  }
+});
+
+// Realça na barra de navegação qual a seção atual da página que a pessoa usuária está.
+// https://codepen.io/mishunov/pen/opeRdL?editors=0010
+$(function () {
+  // Configuração para o IntersectionObserver.
+  const config = {
+    rootMargin: "-50px 0px -55%", // Define as margens para detecção de interseção
+  };
+
+  // Criação de um IntersectionObserver com a função de callback para lidar com as entradas observadas.
+  // 1. Itera sobre as entradas observadas.
+  // 2. Verifica se a entrada está intersectando.
+  // 3. Chama a função de tratamento de interseção.
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        intersectionHandler(entry);
+      }
+    });
+  }, config);
+
+  // Observa cada elemento com os IDs especificados.
+  $("#header, #aboutMe, #skills, #contact").each(function () {
+    observer.observe(this);
+  });
+
+  // Função para lidar com a interseção de elementos.
+  // 1. Obtém o ID da seção intersectada.
+  // 2. Seleciona o elemento de navegação atualmente ativo
+  // 3. Seleciona o elemento de navegação que deve estar ativo com base no ID da seção.
+  // 4. Remove a classe 'active' do elemento de navegação atualmente ativo, se existir.
+  // 5. Adiciona a classe 'active' ao elemento de navegação que deve estar ativo, se existir.
+  function intersectionHandler(entry) {
+    const sectionId = entry.target.id;
+    const currentlyActive = $("nav .nav-link.active");
+    const shouldBeActive = $(`nav .nav-link[href="/index#${sectionId}"]`);
+
+    if (currentlyActive.length) {
+      currentlyActive.removeClass("active");
+    }
+    if (shouldBeActive.length) {
+      shouldBeActive.addClass("active");
+    }
   }
 });
 
@@ -115,33 +161,33 @@ function getWindowPosition() {
 
 // Sobre Mim
 $(window).on("scroll", function () {
-  const aboutMePosition = $("#aboutMe").offset().top;
-  if (getWindowPosition() > aboutMePosition) {
-    $("#aboutMe").addClass("about-me--animated");
+  const aboutMe = $("#aboutMe");
+  if (getWindowPosition() > aboutMe.offset().top) {
+    aboutMe.addClass("about-me--animated");
   }
 });
 
 // Skills
 $(window).on("scroll", function () {
-  const skillsPosition = $("#skills").offset().top;
-  if (getWindowPosition() > skillsPosition) {
-    $("#skills").addClass("skills--animated");
+  const skills = $("#skills");
+  if (getWindowPosition() > skills.offset().top) {
+    skills.addClass("skills--animated");
   }
 });
 
 // Contato
 $(window).on("scroll", function () {
-  const contactPosition = $("#contact").offset().top;
-  if (getWindowPosition() > contactPosition) {
-    $("#contact").addClass("contact--animated");
+  const contact = $("#contact");
+  if (getWindowPosition() > contact.offset().top) {
+    contact.addClass("contact--animated");
   }
 });
 
 // Habilita o botão de envio apenas se o formulário for válido.
 $("#inputName, #inputEmail, #inputMessage").on("input", function () {
+  const inputName = $("#inputName").val();
   const nameRegex = new RegExp(/^[a-zA-Z]+$/);
-  let isValidName = nameRegex.test($("#inputName").val());
-  isValidName = $("#inputName").val().length >= 2;
+  let isValidName = nameRegex.test(inputName) && inputName.length >= 2;
 
   const emailRegex = new RegExp(
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
@@ -151,9 +197,9 @@ $("#inputName, #inputEmail, #inputMessage").on("input", function () {
   const isValidMessage = $("#inputMessage").val().length >= 10;
 
   if (isValidEmail && isValidMessage && isValidName) {
-    $("#contactBtn").attr("disabled", false);
+    $("#contactBtn").attr("disabled", "false");
   } else {
-    $("#contactBtn").attr("disabled", true);
+    $("#contactBtn").attr("disabled", "true");
   }
 });
 

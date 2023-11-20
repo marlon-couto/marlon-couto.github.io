@@ -1,4 +1,4 @@
-<header class="header vh-100 d-flex align-items-center">
+<header class="header vh-100 d-flex align-items-center" id="header">
   <div class="container">
     <div class="row">
       {{! CONTEÚDO DA ESQUERDA }}
@@ -13,11 +13,11 @@
           id="typedText"
         >
         </h2>
-        <p class="fs-5 fw-light text-secondary">baseado em Salvador, BA.</p>
+        <p class="fs-5 fw-light text-secondary">Baseado em Salvador, BA.</p>
         <div class="mt-4 d-flex gap-4 align-items-center header__btn">
           <a href="#aboutMe" class="btn btn-primary btn-lg">Sobre mim</a>
           <a
-            href="/MarlonCurriculum.pdf"
+            href="/public/MarlonCurriculum.pdf"
             download
             class="fs-5 link-secondary text-capitalize"
           >
@@ -33,12 +33,12 @@
         >
           <picture>
             <source
-              srcset="/assets/profile_380x380.jpg"
+              srcset="/public/assets/profile_380x380.jpg"
               media="(min-width: 768px)"
             />
             <img
               loading="lazy"
-              src="/assets/profile_260x260.jpg"
+              src="/public/assets/profile_260x260.jpg"
               alt="Um rapaz sorrindo com camiseta verde. Ao fundo, um parque com árvores."
               class="rounded-circle"
             />

@@ -8,15 +8,15 @@
       <h4
         class="text-capitalize text-bg-primary fs-5 d-inline-block py-1 px-2"
       >Contato</h4>
-      <h2 class="text-capitalize display-5 mt-2 fw-bold">Vamos manter contato</h2>
+      <h2 class="text-capitalize display-5 mt-2 fw-bold">Fale comigo</h2>
     </div>
     {{! CONTEÚDO }}
     <div class="row contact__content">
       <div class="col-lg-6">
         <p class="lead contact__message">
           Vamos conversar sobre novas ideias e novos projetos! Por favor,
-          compartilhe o máximo de informações possível para que possamos tirar o
-          máximo desse primeiro contato.
+          compartilhe o máximo de informações possível para podermos tirar o
+          máximo proveito desse primeiro contato.
         </p>
         {{! INFORMAÇÕES }}
         <div class="row contact__info mt-5">
@@ -66,55 +66,61 @@
         <form
           class="contact__form"
           id="contactForm"
-          novalidate="true"
+          novalidate
           action="https://formspree.io/f/xoqozazw"
           method="post"
         >
           <div class="mb-5">
+            <label class="form-label" for="inputName">Nome</label>
             <input
               type="text"
               class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
-              placeholder="Qual seu nome?"
+              placeholder="Como você se chama?"
               id="inputName"
-              required="true"
+              required
               minlength="2"
               pattern="^[a-zA-Z]+$"
               name="name"
             />
-            <div class="invalid-feedback">O nome deve conter apenas números</div>
+            <div class="invalid-feedback">O nome deve conter apenas números.</div>
           </div>
           <div class="mb-5">
+            <label class="form-label" for="inputEmail">E-mail</label>
             <input
               type="email"
               class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
-              placeholder="Qual seu e-mail?"
+              placeholder="Digite seu melhor e-mail."
               id="inputEmail"
-              required="true"
+              required
               name="email"
             />
-            <div class="invalid-feedback">O email deve seguir o seguinte
-              formato: nome@email.com</div>
+            <div class="invalid-feedback">
+              O email deve seguir o seguinte formato: nome@email.com.
+            </div>
           </div>
           <div class="mb-5">
+            <label class="form-label" for="inputMessage">Mensagem</label>
             <textarea
               class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
               placeholder="Como posso te ajudar?"
               rows="6"
               id="inputMessage"
-              required="true"
+              required
               minlength="10"
               name="message"
             ></textarea>
-            <div class="invalid-feedback">Sua mensagem deve conter um número
-              mínimo de caracteres</div>
+            <div class="invalid-feedback">
+              Sua mensagem deve conter um número mínimo de caracteres.
+            </div>
           </div>
           <div class="mb-5 d-grid">
             <button
               class="btn btn-primary"
               type="submit"
               id="contactBtn"
-              disabled="true"
-            >Enviar</button>
+              disabled
+            >Enviar
+            </button>
           </div>
         </form>
       </div>

@@ -1,17 +1,19 @@
+@use "../abstracts" as abs;
+
 .header {
   .row {
-    @include breakpointDown(large) {
+    @include abs.breakpointDown(large) {
       gap: 6rem;
       flex-direction: column-reverse;
     }
 
-    @include breakpointDown(medium) {
+    @include abs.breakpointDown(medium) {
       gap: 2.5rem;
     }
   }
 
   &__txt {
-    @include breakpointDown(large) {
+    @include abs.breakpointDown(large) {
       text-align: center;
     }
   }
@@ -20,7 +22,7 @@
     // Texto com efeito gradiente.
     // Usei a referência abaixo como inspiração.
     // https://cssgradient.io/blog/css-gradient-text/
-    @include textGradient($purple, $pink);
+    @include abs.textGradient(abs.$purple, abs.$pink);
 
     &::after {
       content: "|";
@@ -47,11 +49,11 @@
   }
 
   &__btn {
-    @include breakpointDown(large) {
+    @include abs.breakpointDown(large) {
       justify-content: center;
     }
 
-    @include breakpointDown(medium) {
+    @include abs.breakpointDown(medium) {
       flex-direction: column;
       margin-top: 2rem !important;
       padding-bottom: 4rem;
@@ -62,7 +64,7 @@
     width: 25.625rem;
     height: 25.625rem;
 
-    @include breakpointDown(medium) {
+    @include abs.breakpointDown(medium) {
       width: 17.5rem;
       height: 17.5rem;
       margin-top: 4rem;
@@ -76,7 +78,7 @@
     bottom: 8rem;
     left: 50%;
 
-    @include breakpointDown(medium) {
+    @include abs.breakpointDown(medium) {
       bottom: 7rem;
     }
 
@@ -98,7 +100,7 @@
       -webkit-animation: 3s animateArrow infinite ease;
       animation: 3s animateArrow infinite ease;
 
-      @include breakpointDown(small) {
+      @include abs.breakpointDown(small) {
         width: 0.9375rem;
         height: 0.9375rem;
         border-right: 0.25rem solid var(--bs-body-color);
