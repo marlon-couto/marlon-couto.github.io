@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="pt">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/vite-4a748afd.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Marlon Couto | Desenvolvedor Web</title>
-    <script type="module" crossorigin src="/assets/main-66a6e853.js"></script>
-    <link rel="stylesheet" href="/assets/index-252f3558.css">
+    <script type="module" crossorigin src="/assets/main-e67325ac.js"></script>
+    <link rel="stylesheet" href="/assets/index-d0d1fbbc.css">
   </head>
   <body>
     <!-- NAVBAR -->
@@ -25,23 +25,25 @@
           aria-label="alternar menu de navegação"
           id="navbarNavOverlay"
         >
-          <input type="checkbox" class="d-block position-absolute z-2 opacity-0" />
+          <label>
+            <input type="checkbox" class="d-block position-absolute z-2 opacity-0"/>
+          </label>
           <span class="z-1 d-block position-relative"></span>
           <span class="z-1 d-block position-relative"></span>
           <span class="z-1 d-block position-relative"></span>
         </div>
         <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbarLinks">
           <li class="nav-item">
-            <a href="#" class="nav-link link-lg">Início</a>
+            <a href="/index#header" class="nav-link link-lg">Início</a>
           </li>
           <li class="nav-item">
-            <a href="#aboutMe" class="nav-link link-lg">Sobre Mim</a>
+            <a href="/index#aboutMe" class="nav-link link-lg">Sobre Mim</a>
           </li>
           <li class="nav-item">
-            <a href="#skills" class="nav-link link-lg">Skills</a>
+            <a href="/index#skills" class="nav-link link-lg">Skills</a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link link-lg">Contato</a>
+            <a href="/index#contact" class="nav-link link-lg">Contato</a>
           </li>
           <ul class="navbar-nav ms-lg-3 nav-icons">
             <li class="nav-item">
@@ -49,7 +51,7 @@
                 href="https://github.com/marlon-couto"
                 target="_blank"
                 class="nav-link github-icon"
-                title="me siga no GitHub"
+                title="Me siga no GitHub"
               >
                 <i class="fab fa-github fa-2x"></i>
               </a>
@@ -57,7 +59,7 @@
             <li class="nav-item">
               <a
                 href="https://linkedin.com/in/marlon-couto"
-                title="vamos nos conectar no LinkedIn"
+                title="Vamos nos conectar no LinkedIn"
                 target="_blank"
                 class="nav-link linkedin-icon"
               >
@@ -68,7 +70,7 @@
               <a
                 href="mailto:coutoozair@gmail.com"
                 class="nav-link"
-                title="me envie um email"
+                title="Me envie um email"
                 target="_blank"
               >
                 <i class="fas fa-inbox fa-2x"></i>
@@ -80,13 +82,13 @@
               <i class="fas fa-sun fa-2x"></i>
               <i class="fas fa-moon fa-2x"></i>
             </label>
-            <input type="checkbox" id="themeToggle" class="opacity-0" />
+            <input type="checkbox" id="themeToggle" class="opacity-0"/>
           </div>
         </ul>
       </div>
     </nav>
     <!-- HEADER -->
-    <header class="header vh-100 d-flex align-items-center">
+    <header class="header vh-100 d-flex align-items-center" id="header">
       <div class="container">
         <div class="row">
           <div
@@ -100,11 +102,11 @@
               id="typedText"
             >
             </h2>
-            <p class="fs-5 fw-light text-secondary">baseado em Salvador, BA.</p>
+            <p class="fs-5 fw-light text-secondary">Baseado em Salvador, BA.</p>
             <div class="mt-4 d-flex gap-4 align-items-center header__btn">
               <a href="#aboutMe" class="btn btn-primary btn-lg">Sobre mim</a>
               <a
-                href="/MarlonCurriculum.pdf"
+                href="/public/MarlonCurriculum.pdf"
                 download
                 class="fs-5 link-secondary text-capitalize"
               >
@@ -119,12 +121,12 @@
             >
               <picture>
                 <source
-                  srcset="/assets/profile_380x380.jpg"
+                  srcset="/assets/profile_380x380-35f388f6.jpg "
                   media="(min-width: 768px)"
                 />
                 <img
                   loading="lazy"
-                  src="/assets/profile_260x260.jpg"
+                  src="/assets/profile_260x260-1f624074.jpg"
                   alt="Um rapaz sorrindo com camiseta verde. Ao fundo, um parque com árvores."
                   class="rounded-circle"
                 />
@@ -156,7 +158,7 @@
                 <span class="fw-semibold lh-lg about-me__name">Marlon Couto</span>
               </h3>
               <p class="lead pe-3 about-me__description">
-                Eu sou um desenvolvedor que tem paixão pelo mundo da programação. Eu
+                Eu sou um desenvolvedor com paixão pelo mundo da programação. Eu
                 amo desenvolver sistemas eficientes com interfaces bonitas que
                 entregam verdadeiro valor à pessoa usuária. Eu dou meu melhor em tudo
                 que faço.
@@ -169,7 +171,7 @@
                 class="experience d-flex flex-column align-items-center justify-content-center"
               >
                 <p class="experience__year z-1 position-relative">1</p>
-                <p class="fs-4 text-muted d-inline-block mt-n2">anos de experiência</p>
+                <p class="fs-4 text-muted d-inline-block mt-n2">Ano de experiência</p>
               </div>
             </div>
           </div>
@@ -190,7 +192,7 @@
             </div>
             <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
               <h5 class="fs-6 text-muted">Data de nascimento:</h5>
-              <p class="lead text-body-emphasis fw-semibold">17 de Janeiro de 1991</p>
+              <p class="lead text-body-emphasis fw-semibold">17 de janeiro de 1991</p>
             </div>
             <div class="col-md-6 col-lg-3 mb-md-3 mb-4">
               <h5 class="fs-6 text-muted">Localização:</h5>
@@ -220,7 +222,7 @@
                 pages, SPAs, web apps, APIs Rest e SSR.
               </p>
               <a
-                href="/MarlonCurriculum.pdf"
+                href="/public/MarlonCurriculum.pdf"
                 download
                 class="mt-3 btn btn-lg btn-primary"
               >
@@ -232,82 +234,82 @@
               <div class="row px-5 justify-content-center">
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Angular">
-                    <img src="/assets/angular.svg" alt="Angular" />
+                    <img src="/assets/angular-8e69583d.svg" alt="Angular"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Bootstrap">
-                    <img src="/assets/bootstrap.svg" alt="Bootstrap" />
+                    <img src="/assets/bootstrap-0617bb17.svg" alt="Bootstrap"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="C#">
-                    <img src="/assets/csharp.svg" alt="C#" />
+                    <img src="/assets/csharp-4aeedd3c.svg" alt="C#"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="CSS">
-                    <img src="/assets/css.svg" alt="CSS" />
+                    <img src="/assets/css-0a9dab31.svg" alt="CSS"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title=".NET">
-                    <img src="/assets/dotnet.svg" alt=".NET" />
+                    <img src="/assets/dotnet-677e4f3e.svg" alt=".NET"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Express JS">
-                    <img src="/assets/express.svg" alt="Express JS" />
+                    <img src="/assets/express-27ec7e3d.svg" alt="Express JS"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="HTML">
-                    <img src="/assets/html.svg" alt="HTML" />
+                    <img src="/assets/html-8159440d.svg" alt="HTML"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="JavaScript">
-                    <img src="/assets/javascript.svg" alt="JavaScript" />
+                    <img src="/assets/javascript-7bcb76ef.svg" alt="JavaScript"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="jQuery">
-                    <img src="/assets/jquery.svg" alt="jQuery" />
+                    <img src="/assets/jquery-1c62a894.svg" alt="jQuery"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="MongoDB">
-                    <img src="/assets/mongodb.svg" alt="MongoDB" />
+                    <img src="/assets/mongodb-167cb467.svg" alt="MongoDB"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="MySQL">
-                    <img src="/assets/mysql.svg" alt="MySQL" />
+                    <img src="/assets/mysql-6b93a1eb.svg" alt="MySQL"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Nest JS">
-                    <img src="/assets/nestjs.svg" alt="Nest JS" />
+                    <img src="/assets/nestjs-ae0976e9.svg" alt="Nest JS"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Node.js">
-                    <img src="/assets/nodejs.svg" alt="Node.js" />
+                    <img src="/assets/nodejs-5c52a390.svg" alt="Node.js"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="React">
-                    <img src="/assets/react.svg" alt="React" />
+                    <img src="/assets/react-de5d9fc9.svg" alt="React"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="Sass">
-                    <img src="/assets/sass.svg" alt="Sass" />
+                    <img src="/assets/sass-36f62461.svg" alt="Sass"/>
                   </div>
                 </div>
                 <div class="col-md-3 col-6">
                   <div class="card p-4" title="TypeScript">
-                    <img src="/assets/typescript.svg" alt="TypeScript" />
+                    <img src="/assets/typescript-079f1e7e.svg" alt="TypeScript"/>
                   </div>
                 </div>
               </div>
@@ -325,14 +327,14 @@
             <h4
               class="text-capitalize text-bg-primary fs-5 d-inline-block py-1 px-2"
             >Contato</h4>
-            <h2 class="text-capitalize display-5 mt-2 fw-bold">Vamos manter contato</h2>
+            <h2 class="text-capitalize display-5 mt-2 fw-bold">Fale comigo</h2>
           </div>
           <div class="row contact__content">
             <div class="col-lg-6">
               <p class="lead contact__message">
                 Vamos conversar sobre novas ideias e novos projetos! Por favor,
-                compartilhe o máximo de informações possível para que possamos tirar o
-                máximo desse primeiro contato.
+                compartilhe o máximo de informações possível para podermos tirar o
+                máximo proveito desse primeiro contato.
               </p>
               <div class="row contact__info mt-5">
                 <div class="col-md-6 mb-md-3 mb-4">
@@ -379,55 +381,61 @@
               <form
                 class="contact__form"
                 id="contactForm"
-                novalidate="true"
+                novalidate
                 action="https://formspree.io/f/xoqozazw"
                 method="post"
               >
                 <div class="mb-5">
+                  <label class="form-label" for="inputName">Nome</label>
                   <input
                     type="text"
                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
-                    placeholder="Qual seu nome?"
+                    placeholder="Como você se chama?"
                     id="inputName"
-                    required="true"
+                    required
                     minlength="2"
                     pattern="^[a-zA-Z]+$"
                     name="name"
                   />
-                  <div class="invalid-feedback">O nome deve conter apenas números</div>
+                  <div class="invalid-feedback">O nome deve conter apenas números.</div>
                 </div>
                 <div class="mb-5">
+                  <label class="form-label" for="inputEmail">E-mail</label>
                   <input
                     type="email"
                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
-                    placeholder="Qual seu e-mail?"
+                    placeholder="Digite seu melhor e-mail."
                     id="inputEmail"
-                    required="true"
+                    required
                     name="email"
                   />
-                  <div class="invalid-feedback">O email deve seguir o seguinte
-                    formato: nome@email.com</div>
+                  <div class="invalid-feedback">
+                    O email deve seguir o seguinte formato: nome@email.com.
+                  </div>
                 </div>
                 <div class="mb-5">
+                  <label class="form-label" for="inputMessage">Mensagem</label>
                   <textarea
                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
                     placeholder="Como posso te ajudar?"
                     rows="6"
                     id="inputMessage"
-                    required="true"
+                    required
                     minlength="10"
                     name="message"
                   ></textarea>
-                  <div class="invalid-feedback">Sua mensagem deve conter um número
-                    mínimo de caracteres</div>
+                  <div class="invalid-feedback">
+                    Sua mensagem deve conter um número mínimo de caracteres.
+                  </div>
                 </div>
                 <div class="mb-5 d-grid">
                   <button
                     class="btn btn-primary"
                     type="submit"
                     id="contactBtn"
-                    disabled="true"
-                  >Enviar</button>
+                    disabled
+                  >Enviar
+                  </button>
                 </div>
               </form>
             </div>
