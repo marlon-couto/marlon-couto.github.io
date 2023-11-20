@@ -8,7 +8,9 @@
       aria-label="alternar menu de navegação"
       id="navbarNavOverlay"
     >
-      <input type="checkbox" class="d-block position-absolute z-2 opacity-0" />
+      <label>
+        <input type="checkbox" class="d-block position-absolute z-2 opacity-0"/>
+      </label>
       <span class="z-1 d-block position-relative"></span>
       <span class="z-1 d-block position-relative"></span>
       <span class="z-1 d-block position-relative"></span>
@@ -16,16 +18,16 @@
     {{! LINKS DE NAVEGAÇÃO }}
     <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbarLinks">
       <li class="nav-item">
-        <a href="#" class="nav-link link-lg">Início</a>
+        <a href="/index#header" class="nav-link link-lg">Início</a>
       </li>
       <li class="nav-item">
-        <a href="#aboutMe" class="nav-link link-lg">Sobre Mim</a>
+        <a href="/index#aboutMe" class="nav-link link-lg">Sobre Mim</a>
       </li>
       <li class="nav-item">
-        <a href="#skills" class="nav-link link-lg">Skills</a>
+        <a href="/index#skills" class="nav-link link-lg">Skills</a>
       </li>
       <li class="nav-item">
-        <a href="#contact" class="nav-link link-lg">Contato</a>
+        <a href="/index#contact" class="nav-link link-lg">Contato</a>
       </li>
       {{! LINKS SOCIAIS }}
       <ul class="navbar-nav ms-lg-3 nav-icons">
@@ -34,7 +36,7 @@
             href="https://github.com/marlon-couto"
             target="_blank"
             class="nav-link github-icon"
-            title="me siga no GitHub"
+            title="Me siga no GitHub"
           >
             <i class="fab fa-github fa-2x"></i>
           </a>
@@ -42,7 +44,7 @@
         <li class="nav-item">
           <a
             href="https://linkedin.com/in/marlon-couto"
-            title="vamos nos conectar no LinkedIn"
+            title="Vamos nos conectar no LinkedIn"
             target="_blank"
             class="nav-link linkedin-icon"
           >
@@ -53,7 +55,7 @@
           <a
             href="mailto:coutoozair@gmail.com"
             class="nav-link"
-            title="me envie um email"
+            title="Me envie um email"
             target="_blank"
           >
             <i class="fas fa-inbox fa-2x"></i>
@@ -66,7 +68,7 @@
           <i class="fas fa-sun fa-2x"></i>
           <i class="fas fa-moon fa-2x"></i>
         </label>
-        <input type="checkbox" id="themeToggle" class="opacity-0" />
+        <input type="checkbox" id="themeToggle" class="opacity-0"/>
       </div>
     </ul>
   </div>
