@@ -187,7 +187,7 @@ $(window).on("scroll", function () {
 $("#inputName, #inputEmail, #inputMessage").on("input", function () {
   const inputName = $("#inputName").val();
   const nameRegex = new RegExp(/^[a-zA-Z]+$/);
-  let isValidName = nameRegex.test(inputName) && inputName.length >= 2;
+  const isValidName = nameRegex.test(inputName) && inputName.length >= 2;
 
   const emailRegex = new RegExp(
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
