@@ -1,5 +1,5 @@
-@import "./about-me";
-@import "./contact";
-@import "./header";
-@import "./navbar";
-@import "./skills";
+@forward "./about-me";
+@forward "./contact";
+@forward "./header";
+@forward "./navbar";
+@forward "./skills";
