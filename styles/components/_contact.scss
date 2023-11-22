@@ -39,8 +39,8 @@
     }
 
     .form-control:focus {
-      box-shadow: none !important;
       border-color: var(--bs-primary);
+      box-shadow: none !important;
     }
   }
 }

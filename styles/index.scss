@@ -5,13 +5,13 @@
 *::before,
 *::after {
   box-sizing: inherit;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
   transition: background 1s ease-in; // Torna a transição de tema claro/escuro mais suave.
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,17 +41,17 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
   outline: 0.0625rem solid slategrey;
+  background-color: darkgrey;
 }
 
 // Adiciona efeitos de transição aos botões.
 .btn {
   &:link,
   &:visited {
-    text-transform: uppercase;
     display: inline-block;
     transition: all 0.2s;
+    text-transform: uppercase;
   }
 
   &:hover {

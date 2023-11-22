@@ -3,8 +3,8 @@
 .header {
   .row {
     @include abs.breakpointDown(large) {
-      gap: 6rem;
       flex-direction: column-reverse;
+      gap: 6rem;
     }
 
     @include abs.breakpointDown(medium) {
@@ -25,10 +25,10 @@
     @include abs.textGradient(abs.$purple, abs.$pink);
 
     &::after {
-      content: "|";
       display: inline;
-      -webkit-animation: blinkCursor 0.75s infinite;
+      content: "|";
       -moz-animation: blinkCursor 0.75s infinite;
+      -webkit-animation: blinkCursor 0.75s infinite;
       animation: blinkCursor 0.75s infinite;
     }
 
@@ -44,8 +44,8 @@
   }
 
   .typed-cursor {
-    opacity: 0;
     display: none;
+    opacity: 0;
   }
 
   &__btn {
@@ -84,21 +84,21 @@
 
     a::after {
       position: absolute;
-      content: "";
-      width: 1.25rem;
-      height: 1.25rem;
-      margin: auto;
+      z-index: 10;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: 10;
-      border-right: 0.3125rem solid var(--bs-body-color);
-      border-bottom: 0.3125rem solid var(--bs-body-color);
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: auto;
+      content: "";
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
       -webkit-animation: 3s animateArrow infinite ease;
       animation: 3s animateArrow infinite ease;
+      border-right: 0.3125rem solid var(--bs-body-color);
+      border-bottom: 0.3125rem solid var(--bs-body-color);
 
       @include abs.breakpointDown(small) {
         width: 0.9375rem;

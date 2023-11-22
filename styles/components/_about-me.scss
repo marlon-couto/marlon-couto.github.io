@@ -15,8 +15,8 @@
     height: 50vh;
 
     @include abs.breakpointDown(large) {
-      text-align: center;
       margin-top: 2rem;
+      text-align: center;
     }
 
     @include abs.breakpointDown(medium) {
@@ -71,17 +71,17 @@
       left: 2.125rem;
 
       &::after {
-        content: "";
-        width: 6.25rem;
-        height: 6.25rem;
-        background-color: var(--bs-primary);
-        display: inline-block;
-        border-radius: 50%;
         position: relative;
-        opacity: 0.75;
+        z-index: -1 !important;
         top: -0.8125rem;
         left: -4.6875rem;
-        z-index: -1 !important;
+        display: inline-block;
+        width: 6.25rem;
+        height: 6.25rem;
+        content: "";
+        opacity: 0.75;
+        border-radius: 50%;
+        background-color: var(--bs-primary);
       }
     }
   }
