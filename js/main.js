@@ -1,6 +1,6 @@
 import $ from "jquery";
 import Typed from "typed.js";
-import "../styles/index.scss";
+import "../scss/index.scss";
 
 // Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela a partir do topo.
 $(window).on("scroll", function () {
