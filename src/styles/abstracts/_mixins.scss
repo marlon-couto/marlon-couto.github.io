@@ -1,46 +1,46 @@
 // Os mixins abaixo adiciona as animações com delay e fill-mode.
 
 @mixin animateBottom($delay: 1.25s) {
-  animation: slideBottom 1s ease $delay;
-  animation-fill-mode: backwards;
+    animation: slideBottom 1s ease $delay;
+    animation-fill-mode: backwards;
 }
 
 @mixin animateLeft($delay: 0.5s) {
-  animation: slideLeft 1s ease-out $delay;
-  animation-fill-mode: backwards;
+    animation: slideLeft 1s ease-out $delay;
+    animation-fill-mode: backwards;
 }
 
 @mixin animateRight($delay: 1s) {
-  animation: slideRight 1s ease $delay;
-  animation-fill-mode: backwards;
+    animation: slideRight 1s ease $delay;
+    animation-fill-mode: backwards;
 }
 
 @mixin animateUp($delay: 0.25s) {
-  animation: slideUp 1s ease $delay;
-  animation-fill-mode: backwards;
+    animation: slideUp 1s ease $delay;
+    animation-fill-mode: backwards;
 }
 
 // Os breakpoints abaixo modificam o estilo do elemento
 // quando a tela está abaixo de grande, médio ou pequeno.
 
 $breakpoints-down: (
-  "small": "36rem",
-  "medium": "48rem",
-  "large": "62rem",
+    "small": "36rem",
+    "medium": "48rem",
+    "large": "62rem",
 );
 
 @mixin breakpointDown($size) {
-  @media screen and (max-width: map-get($breakpoints-down, $size)) {
-    @content;
-  }
+    @media screen and (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
 }
 
 // Adiciona o efeito de gradiente ao texto junto com algumas
 // regras para compatibilidade entre diferentes navegadores.
 @mixin textGradient($colorInitial, $colorFinal) {
-  background: -webkit-linear-gradient(45deg, $colorInitial, $colorFinal);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+    background: -webkit-linear-gradient(45deg, $colorInitial, $colorFinal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }

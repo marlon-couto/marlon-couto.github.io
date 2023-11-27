@@ -1,52 +1,52 @@
 @use "../abstracts" as abs;
 
 .skills {
-  &__title {
-    .skills--animated & {
-      @include abs.animateUp();
-    }
-  }
-
-  &__resume {
-    @include abs.breakpointDown(large) {
-      margin-bottom: 5.5rem;
-      text-align: center;
+    &__title {
+        .skills--animated & {
+            @include abs.animateUp();
+        }
     }
 
-    @include abs.breakpointDown(medium) {
-      margin-bottom: 4.5rem;
+    &__resume {
+        @include abs.breakpointDown(large) {
+            margin-bottom: 5.5rem;
+            text-align: center;
+        }
+
+        @include abs.breakpointDown(medium) {
+            margin-bottom: 4.5rem;
+        }
+
+        p {
+            .skills--animated & {
+                @include abs.animateLeft();
+            }
+        }
+
+        .btn {
+            .skills--animated & {
+                @include abs.animateLeft(0.75s);
+            }
+        }
     }
 
-    p {
-      .skills--animated & {
-        @include abs.animateLeft();
-      }
-    }
+    &__techs {
+        .skills--animated & {
+            @include abs.animateRight();
+        }
 
-    .btn {
-      .skills--animated & {
-        @include abs.animateLeft(0.75s);
-      }
-    }
-  }
+        .card {
+            display: flex;
+            justify-content: center;
+            width: 7.5rem;
+            height: 7.5rem;
+            margin-bottom: 1.25rem;
+            transition: all 0.5s ease-in-out;
 
-  &__techs {
-    .skills--animated & {
-      @include abs.animateRight();
+            &:hover {
+                transform: scale(1.1);
+                background-color: var(--bs-secondary-bg);
+            }
+        }
     }
-
-    .card {
-      display: flex;
-      justify-content: center;
-      width: 7.5rem;
-      height: 7.5rem;
-      margin-bottom: 1.25rem;
-      transition: all 0.5s ease-in-out;
-
-      &:hover {
-        transform: scale(1.1);
-        background-color: var(--bs-secondary-bg);
-      }
-    }
-  }
 }

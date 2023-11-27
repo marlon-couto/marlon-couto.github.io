@@ -1,46 +1,46 @@
 @use "../abstracts" as abs;
 
 .contact {
-  &__title {
-    .contact--animated & {
-      @include abs.animateUp();
-    }
-  }
-
-  &__content {
-    @include abs.breakpointDown(large) {
-      gap: 5.5rem;
-    }
-  }
-
-  &__message {
-    @include abs.breakpointDown(large) {
-      text-align: center;
+    &__title {
+        .contact--animated & {
+            @include abs.animateUp();
+        }
     }
 
-    .contact--animated & {
-      @include abs.animateLeft();
-    }
-  }
-
-  &__info {
-    .contact--animated & {
-      @include abs.animateLeft(0.75s);
-    }
-  }
-
-  &__form {
-    .contact--animated & {
-      @include abs.animateRight();
+    &__content {
+        @include abs.breakpointDown(large) {
+            gap: 5.5rem;
+        }
     }
 
-    .form-control {
-      border-width: 0.125rem;
+    &__message {
+        @include abs.breakpointDown(large) {
+            text-align: center;
+        }
+
+        .contact--animated & {
+            @include abs.animateLeft();
+        }
     }
 
-    .form-control:focus {
-      border-color: var(--bs-primary);
-      box-shadow: none !important;
+    &__info {
+        .contact--animated & {
+            @include abs.animateLeft(0.75s);
+        }
     }
-  }
+
+    &__form {
+        .contact--animated & {
+            @include abs.animateRight();
+        }
+
+        .form-control {
+            border-width: 0.125rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--bs-primary);
+            box-shadow: none !important;
+        }
+    }
 }
