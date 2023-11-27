@@ -1,57 +1,57 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+    build:
+        name: Build
+        runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+        steps:
+            -   name: Checkout Repository
+                uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+            -   name: Set up Node.js
+                uses: actions/setup-node@v3
+                with:
+                    node-version: '18'
 
-    - name: Install Dependencies
-      run: npm install
+            -   name: Install Dependencies
+                run: npm install
 
-    - name: Build
-      run: npm run build 
+            -   name: Build
+                run: npm run build
 
-    - name: List Dist Contents
-      run: ls -R ./dist
+            -   name: List Dist Contents
+                run: ls -R ./dist
 
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v3
-      with:
-        name: production-files
-        path: ./dist
+            -   name: Upload production-ready build files
+                uses: actions/upload-artifact@v3
+                with:
+                    name: production-files
+                    path: ./dist
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-    
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+        steps:
+            -   name: Download artifact
+                uses: actions/download-artifact@v3
+                with:
+                    name: production-files
+                    path: ./dist
+
+            -   name: Deploy to GitHub Pages
+                uses: peaceiris/actions-gh-pages@v3
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    publish_dir: ./dist
 
 permissions:
-  contents: write
+    contents: write
