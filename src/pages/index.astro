@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+
+const curriculum = "https://drive.google.com/file/d/166igUnWIFVQobzi4h9g6-LUXlXPyPUf_/view?usp=sharing";
+---
+
+<Layout title="Marlon Couto | Desenvolvedor Web">
+  <Header curriculum={curriculum}></Header>
+  <!--MAIN-->
+  <main>
+    <AboutMe></AboutMe>
+    <Skills curriculum={curriculum}></Skills>
+    <Contact></Contact>
+  </main>
+</Layout>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  curriculum: string;
+}
+---
+
+<!--HEADER-->
+<header class="header vh-100 d-flex align-items-center" id="header">
+  <div class="container">
+    <div class="row">
+      <!--CONTEÚDO DA ESQUERDA-->
+      <div
+        class="col-lg-6 d-flex flex-column justify-content-center header__txt"
+      >
+        <h1 class="fw-lighter text-uppercase">
+          Eu sou um desenvolvedor
+        </h1>
+        <h2
+          class="display-1 my-2 fw-bold text-uppercase d-inline-block header__typing"
+          id="typedText"
+        >
+        </h2>
+        <p class="fs-5 fw-light text-secondary">Baseado em Salvador, BA.</p>
+        <div class="mt-4 d-flex gap-4 align-items-center header__btn">
+          <a href="#aboutMe" class="btn btn-primary btn-lg">Sobre mim</a>
+          <a
+            href={Astro.props.curriculum}
+            download
+            class="fs-5 link-secondary text-capitalize"
+            target="_blank"
+          >
+            Baixar currículo
+            <i class="fas fa-circle-arrow-down ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <!--CONTEÚDO DA DIREITA-->
+      <div class="col-lg-6 d-flex justify-content-center align-items-center">
+        <div
+          class="bg-body rounded-circle header__img d-flex justify-content-center align-items-center shadow-lg"
+        >
+          <picture>
+            <source
+              srcset="/assets/profile_380x380.jpg"
+              media="(min-width: 768px)"
+            />
+            <img
+              loading="lazy"
+              src="/assets/profile_260x260.jpg"
+              alt="Um rapaz sorrindo com camiseta verde. Ao fundo, um parque com árvores."
+              class="rounded-circle"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <!--SETA ANIMADA-->
+    <div class="row mt-3 position-absolute header__arrow">
+      <a href="#aboutMe"></a>
+    </div>
+  </div>
+</header>

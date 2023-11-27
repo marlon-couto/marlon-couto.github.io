@@ -1,0 +1,67 @@
+---
+
+---
+
+<!--FORMULÁRIO DE CONTATO-->
+<div class="col-lg-6 px-5">
+  <form
+    class="contact__form"
+    id="contactForm"
+    novalidate
+    action="https://formspree.io/f/xoqozazw"
+    method="post"
+  >
+    <div class="mb-5">
+      <label class="form-label" for="inputName">Nome</label>
+      <input
+        type="text"
+        class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
+        placeholder="Como você se chama?"
+        id="inputName"
+        required
+        minlength="2"
+        pattern="^[a-zA-Z]+$"
+        name="name"
+      />
+      <div class="invalid-feedback">O nome deve conter apenas números.</div>
+    </div>
+    <div class="mb-5">
+      <label class="form-label" for="inputEmail">E-mail</label>
+      <input
+        type="email"
+        class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
+        placeholder="Digite seu melhor e-mail."
+        id="inputEmail"
+        required
+        name="email"
+      />
+      <div class="invalid-feedback">
+        O email deve seguir o seguinte formato: nome@email.com.
+      </div>
+    </div>
+    <div class="mb-5">
+      <label class="form-label" for="inputMessage">Mensagem</label>
+      <textarea
+        class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+        placeholder="Como posso te ajudar?"
+        rows="6"
+        id="inputMessage"
+        required
+        minlength="10"
+        name="message"
+      ></textarea>
+      <div class="invalid-feedback">
+        Sua mensagem deve conter um número mínimo de caracteres.
+      </div>
+    </div>
+    <div class="mb-5 d-grid">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        id="contactBtn"
+        disabled
+      >Enviar
+      </button>
+    </div>
+  </form>
+</div>
