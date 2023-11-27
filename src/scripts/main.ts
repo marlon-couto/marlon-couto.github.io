@@ -134,7 +134,7 @@ $(function () {
             "C#",
             "JavaScript",
             "jQuery",
-            "Node.scripts",
+            "Node.js",
             "Sass",
             "TypeScript",
         ],
