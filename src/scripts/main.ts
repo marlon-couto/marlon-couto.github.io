@@ -45,7 +45,7 @@ $(function () {
     function intersectionHandler(entry: IntersectionObserverEntry) {
         const sectionId = entry.target.id;
         const currentlyActive = $("nav .nav-link.active");
-        const shouldBeActive = $(`nav .nav-link[href="/index#${sectionId}"]`);
+        const shouldBeActive = $(`nav .nav-link[href="#${sectionId}"]`);
 
         if (!currentlyActive.is(shouldBeActive)) {
             currentlyActive.removeClass("active");
