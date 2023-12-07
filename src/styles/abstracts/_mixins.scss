@@ -1,4 +1,4 @@
-// Os mixins abaixo adiciona as animações com delay e fill-mode.
+// Os mixins abaixo adicionam as animações com delay e fill-mode.
 
 @mixin animateBottom($delay: 1.25s) {
     animation: slideBottom 1s ease $delay;
@@ -20,7 +20,7 @@
     animation-fill-mode: backwards;
 }
 
-// Os breakpoints abaixo modificam o estilo do elemento
+// O breakpoint abaixo modifica o estilo do elemento
 // quando a tela está abaixo de grande, médio ou pequeno.
 
 $breakpoints-down: (
