@@ -2,7 +2,7 @@ import $ from "jquery";
 import Typed from "typed.js";
 
 // Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela a partir do topo.
-$(window).on("scroll", function () {
+$(window).on("scroll", () => {
     if (window.scrollY > 50) {
         $(".navbar").addClass("navbar-sticky");
     } else {
@@ -13,7 +13,7 @@ $(window).on("scroll", function () {
 
 // Realça na barra de navegação qual a seção atual da página que a pessoa usuária está.
 // https://codepen.io/mishunov/pen/opeRdL?editors=0010
-$(function () {
+$(() => {
     // Configuração para o IntersectionObserver.
     const config = {
         rootMargin: "-50px 0px -55%", // Define as margens para detecção de interseção
@@ -23,7 +23,7 @@ $(function () {
     // 1. Itera sobre as entradas observadas.
     // 2. Verifica se a entrada está intersectando.
     // 3. Chama a função de tratamento de interseção.
-    const observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 intersectionHandler(entry);
@@ -42,7 +42,7 @@ $(function () {
     // 3. Seleciona o elemento de navegação que deve estar ativo com base no ID da seção.
     // 4. Remove a classe 'active' do elemento de navegação atualmente ativo, se existir.
     // 5. Adiciona a classe 'active' ao elemento de navegação que deve estar ativo, se existir.
-    function intersectionHandler(entry: IntersectionObserverEntry) {
+    const intersectionHandler = (entry: IntersectionObserverEntry) => {
         const sectionId = entry.target.id;
         const currentlyActive = $("nav .nav-link.active");
         const shouldBeActive = $(`nav .nav-link[href="#${sectionId}"]`);
@@ -51,11 +51,11 @@ $(function () {
             currentlyActive.removeClass("active");
             shouldBeActive.addClass("active");
         }
-    }
+    };
 });
 
 // Retorna o tema de cores atual (light ou dark).
-function getTheme() {
+const getTheme = () => {
     const theme = localStorage.getItem("theme");
     if (theme) {
         return theme;
@@ -64,10 +64,10 @@ function getTheme() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
-}
+};
 
 // Muda o ícone para combinar com o tema atual.
-function showToggleThemeIcons() {
+const showToggleThemeIcons = () => {
     if (getTheme() === "dark") {
         $("i.fa-sun").show();
         $("i.fa-moon").hide();
@@ -75,12 +75,12 @@ function showToggleThemeIcons() {
         $("i.fa-sun").hide();
         $("i.fa-moon").show();
     }
-}
+};
 
 // Marca/desmarca a caixa de seleção que indica o tema atual,
 // salva o tema no armazenamento local do navegador
 // e adiciona um efeito de transição ao ícone.
-$(function () {
+$(() => {
     if (getTheme() === "dark") {
         $("#themeToggle").prop("checked", true);
         localStorage.setItem("theme", "dark");
@@ -96,7 +96,7 @@ $(function () {
 
 // Muda o tema de cores do Bootstrap se o switch for clicado
 // e salva o novo tema no armazenamento local.
-$("#themeToggle").on("click", function () {
+$("#themeToggle").on("click", () => {
     if (getTheme() === "dark") {
         localStorage.setItem("theme", "light");
         showToggleThemeIcons();
@@ -109,23 +109,23 @@ $("#themeToggle").on("click", function () {
 });
 
 // Exibe o overlay ao clicar no menu hambúrguer.
-$("#navbarNavOverlay").on("click", function () {
+$("#navbarNavOverlay").on("click", () => {
     $("#navbarLinks").toggleClass("navbar__overlay");
 });
 
 // Garante que o menu hambúrguer esteja fechado ao carregar a página.
-$(function () {
+$(() => {
     $("#navbarNavOverlay > input").prop("checked", false);
 });
 
 // Fecha o menu overlay ao clicar em algum link.
-$("#navbarLinks > .nav-item").on("click", function () {
+$("#navbarLinks > .nav-item").on("click", () => {
     $("#navbarNavOverlay > input").prop("checked", false);
     $("#navbarLinks").removeClass("navbar__overlay");
 });
 
 // Exibe o texto animado com efeito de máquina de escrever.
-$(function () {
+$(() => {
     const typed = new Typed("#typedText", {
         strings: [
             "Angular",
@@ -147,17 +147,17 @@ $(function () {
 });
 
 // Calcula a posição atual da tela no navegador da pessoa usuária.
-function getWindowPosition() {
+const getWindowPosition = () => {
     const windowHeight = $(window).height() ?? 0;
     const scrollPosition = $(window).scrollTop() ?? 0;
     return windowHeight + scrollPosition;
-}
+};
 
 // As funções abaixo adicionam um efeito de animação ao conteúdo
 // quando a pessoa usuária rola a tela até a seção referida.
 
 // Sobre Mim
-$(window).on("scroll", function () {
+$(window).on("scroll", () => {
     const aboutMe = $("#aboutMe");
     if (getWindowPosition() > aboutMe.offset()!.top) {
         aboutMe.addClass("about-me--animated");
@@ -165,7 +165,7 @@ $(window).on("scroll", function () {
 });
 
 // Skills
-$(window).on("scroll", function () {
+$(window).on("scroll", () => {
     const skills = $("#skills");
     if (getWindowPosition() > skills.offset()!.top) {
         skills.addClass("skills--animated");
@@ -173,7 +173,7 @@ $(window).on("scroll", function () {
 });
 
 // Contato
-$(window).on("scroll", function () {
+$(window).on("scroll", () => {
     const contact = $("#contact");
     if (getWindowPosition() > contact.offset()!.top) {
         contact.addClass("contact--animated");
@@ -181,7 +181,7 @@ $(window).on("scroll", function () {
 });
 
 // Habilita o botão de envio apenas se o formulário for válido.
-$("#inputName, #inputEmail, #inputMessage").on("input", function () {
+$("#inputName, #inputEmail, #inputMessage").on("input", () => {
     const inputName = ($("#inputName").val() ?? "").toString();
     const nameRegex = new RegExp(/^[a-zA-Z]+$/);
     const isValidName = nameRegex.test(inputName) && inputName.length >= 2;
@@ -204,6 +204,6 @@ $("#inputName, #inputEmail, #inputMessage").on("input", function () {
 });
 
 // Mostra mensagens de validação no formulário.
-$("#inputMessage").on("change", function () {
+$("#inputMessage").on("change", () => {
     $("#contactForm").addClass("was-validated");
 });
