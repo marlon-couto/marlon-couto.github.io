@@ -1,12 +1,12 @@
-@use "../abstracts" as abs;
+@use "../abstracts" as a;
 
 .about-me {
     &__title {
         .about-me--animated & {
-            @include abs.animateUp();
+            @include a.animateUp();
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             margin-bottom: 3rem;
         }
     }
@@ -14,18 +14,18 @@
     &__content {
         height: 50vh;
 
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             margin-top: 2rem;
             text-align: center;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             height: 100%;
         }
 
         h3 {
             .about-me--animated & {
-                @include abs.animateLeft();
+                @include a.animateLeft();
             }
         }
     }
@@ -33,34 +33,34 @@
     &__name {
         border-bottom: 0.25rem solid var(--bs-primary);
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             display: inline-block;
         }
     }
 
     &__description {
         .about-me--animated & {
-            @include abs.animateLeft(0.75s);
+            @include a.animateLeft(0.75s);
         }
 
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             font-size: 1.35rem !important;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             font-size: 1.25rem !important;
             margin-top: 1rem;
         }
     }
 
     &__experience {
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             margin-top: 2rem;
         }
     }
 
     &.about-me--animated .experience {
-        @include abs.animateRight();
+        @include a.animateRight();
     }
 
     .experience {
@@ -88,14 +88,14 @@
 
     &__info {
         .about-me--animated & {
-            @include abs.animateBottom();
+            @include a.animateBottom();
         }
 
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             margin-top: 4rem !important;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             margin-top: 2rem !important;
 
             .col-md-6 {

@@ -1,37 +1,37 @@
-@use "../abstracts" as abs;
+@use "../abstracts" as a;
 
 .contact {
     &__title {
         .contact--animated & {
-            @include abs.animateUp();
+            @include a.animateUp();
         }
     }
 
     &__content {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             gap: 5.5rem;
         }
     }
 
     &__message {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             text-align: center;
         }
 
         .contact--animated & {
-            @include abs.animateLeft();
+            @include a.animateLeft();
         }
     }
 
     &__info {
         .contact--animated & {
-            @include abs.animateLeft(0.75s);
+            @include a.animateLeft(0.75s);
         }
     }
 
     &__form {
         .contact--animated & {
-            @include abs.animateRight();
+            @include a.animateRight();
         }
 
         .form-control {

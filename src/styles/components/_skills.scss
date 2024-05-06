@@ -1,38 +1,38 @@
-@use "../abstracts" as abs;
+@use "../abstracts" as a;
 
 .skills {
     &__title {
         .skills--animated & {
-            @include abs.animateUp();
+            @include a.animateUp();
         }
     }
 
     &__resume {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             margin-bottom: 5.5rem;
             text-align: center;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             margin-bottom: 4.5rem;
         }
 
         p {
             .skills--animated & {
-                @include abs.animateLeft();
+                @include a.animateLeft();
             }
         }
 
         .btn {
             .skills--animated & {
-                @include abs.animateLeft(0.75s);
+                @include a.animateLeft(0.75s);
             }
         }
     }
 
     &__techs {
         .skills--animated & {
-            @include abs.animateRight();
+            @include a.animateRight();
         }
 
         .card {

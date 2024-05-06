@@ -1,19 +1,19 @@
-@use "../abstracts" as abs;
+@use "../abstracts" as a;
 
 .header {
     .row {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             flex-direction: column-reverse;
             gap: 6rem;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             gap: 2.5rem;
         }
     }
 
     &__txt {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             text-align: center;
         }
     }
@@ -22,7 +22,7 @@
         // Texto com efeito gradiente.
         // Usei a referência abaixo como inspiração.
         // https://cssgradient.io/blog/css-gradient-text/
-        @include abs.textGradient(abs.$purple, abs.$pink);
+        @include a.textGradient(a.$purple, a.$pink);
 
         &::after {
             display: inline;
@@ -42,11 +42,11 @@
     }
 
     &__btn {
-        @include abs.breakpointDown(large) {
+        @include a.breakpointDown(large) {
             justify-content: center;
         }
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             flex-direction: column;
             margin-top: 2rem !important;
             padding-bottom: 4rem;
@@ -57,7 +57,7 @@
         width: 25.625rem;
         height: 25.625rem;
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             width: 17.5rem;
             height: 17.5rem;
             margin-top: 4rem;
@@ -71,7 +71,7 @@
         bottom: 8rem;
         left: 50%;
 
-        @include abs.breakpointDown(medium) {
+        @include a.breakpointDown(medium) {
             bottom: 7rem;
         }
 
@@ -91,7 +91,7 @@
             border-right: 0.3125rem solid var(--bs-body-color);
             border-bottom: 0.3125rem solid var(--bs-body-color);
 
-            @include abs.breakpointDown(small) {
+            @include a.breakpointDown(small) {
                 width: 0.9375rem;
                 height: 0.9375rem;
                 border-right: 0.25rem solid var(--bs-body-color);
