@@ -1,0 +1,47 @@
+@use "../abstracts" as a;
+
+.experience {
+   &__title {
+    .about-me--animated & {
+      @include a.animateUp();
+    }
+
+    @include a.breakpointDown(medium) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__content {
+    @include a.breakpointDown(large) {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    @include a.breakpointDown(medium) {
+      height: 100%;
+    }
+
+    h3 {
+      .experience--animated & {
+        @include a.animateLeft();
+      }
+    }
+  }
+
+  &__timeline {
+    margin-top: 2rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  &__icon {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      clip-path: circle(50% at 50% 50%);
+    }
+  }
+}

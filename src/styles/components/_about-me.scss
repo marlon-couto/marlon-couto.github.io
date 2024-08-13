@@ -1,106 +1,106 @@
 @use "../abstracts" as a;
 
 .about-me {
-    &__title {
-        .about-me--animated & {
-            @include a.animateUp();
-        }
-
-        @include a.breakpointDown(medium) {
-            margin-bottom: 3rem;
-        }
+  &__title {
+    .about-me--animated & {
+      @include a.animateUp();
     }
 
-    &__content {
-        height: 50vh;
+    @include a.breakpointDown(medium) {
+      margin-bottom: 3rem;
+    }
+  }
 
-        @include a.breakpointDown(large) {
-            margin-top: 2rem;
-            text-align: center;
-        }
+  &__content {
+    height: 50vh;
 
-        @include a.breakpointDown(medium) {
-            height: 100%;
-        }
-
-        h3 {
-            .about-me--animated & {
-                @include a.animateLeft();
-            }
-        }
+    @include a.breakpointDown(large) {
+      margin-top: 2rem;
+      text-align: center;
     }
 
-    &__name {
-        border-bottom: 0.25rem solid var(--bs-primary);
-
-        @include a.breakpointDown(medium) {
-            display: inline-block;
-        }
+    @include a.breakpointDown(medium) {
+      height: 100%;
     }
 
-    &__description {
-        .about-me--animated & {
-            @include a.animateLeft(0.75s);
-        }
+    h3 {
+      .about-me--animated & {
+        @include a.animateLeft();
+      }
+    }
+  }
 
-        @include a.breakpointDown(large) {
-            font-size: 1.35rem !important;
-        }
+  &__name {
+    border-bottom: 0.25rem solid var(--bs-primary);
 
-        @include a.breakpointDown(medium) {
-            font-size: 1.25rem !important;
-            margin-top: 1rem;
-        }
+    @include a.breakpointDown(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__description {
+    .about-me--animated & {
+      @include a.animateLeft(0.75s);
     }
 
-    &__experience {
-        @include a.breakpointDown(medium) {
-            margin-top: 2rem;
-        }
+    @include a.breakpointDown(large) {
+      font-size: 1.35rem !important;
     }
 
-    &.about-me--animated .experience {
-        @include a.animateRight();
+    @include a.breakpointDown(medium) {
+      font-size: 1.25rem !important;
+      margin-top: 1rem;
+    }
+  }
+
+  &__experience {
+    @include a.breakpointDown(medium) {
+      margin-top: 2rem;
+    }
+  }
+
+  &.about-me--animated .experience {
+    @include a.animateRight();
+  }
+
+  .experience {
+    &__year {
+      font-size: 11rem;
+      line-height: 0.75;
+      top: -0.625rem;
+      left: 2.125rem;
+
+      &::after {
+        position: relative;
+        z-index: -1 !important;
+        top: -0.8125rem;
+        left: -4.6875rem;
+        display: inline-block;
+        width: 6.25rem;
+        height: 6.25rem;
+        content: "";
+        opacity: 0.75;
+        border-radius: 50%;
+        background-color: var(--bs-primary);
+      }
+    }
+  }
+
+  &__info {
+    .about-me--animated & {
+      @include a.animateBottom();
     }
 
-    .experience {
-        &__year {
-            font-size: 11rem;
-            line-height: 0.75;
-            top: -0.625rem;
-            left: 2.125rem;
-
-            &::after {
-                position: relative;
-                z-index: -1 !important;
-                top: -0.8125rem;
-                left: -4.6875rem;
-                display: inline-block;
-                width: 6.25rem;
-                height: 6.25rem;
-                content: "";
-                opacity: 0.75;
-                border-radius: 50%;
-                background-color: var(--bs-primary);
-            }
-        }
+    @include a.breakpointDown(large) {
+      margin-top: 4rem !important;
     }
 
-    &__info {
-        .about-me--animated & {
-            @include a.animateBottom();
-        }
+    @include a.breakpointDown(medium) {
+      margin-top: 2rem !important;
 
-        @include a.breakpointDown(large) {
-            margin-top: 4rem !important;
-        }
-
-        @include a.breakpointDown(medium) {
-            margin-top: 2rem !important;
-
-            .col-md-6 {
-                height: 3.625rem;
-            }
-        }
+      .col-md-6 {
+        height: 3.625rem;
+      }
     }
+  }
 }

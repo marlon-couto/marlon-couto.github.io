@@ -3,10 +3,11 @@ import HamburgerMenu from "./HamburgerMenu.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const navLinks = [
-    {href: "#header", text: "Início"},
-    {href: "#aboutMe", text: "Sobre Mim"},
-    {href: "#skills", text: "Skills"},
-    {href: "#contact", text: "Contato"}
+    { href: "#header", text: "Início" },
+    { href: "#aboutMe", text: "Sobre Mim" },
+    { href: "#experience", text: "Experiência" },
+    { href: "#skills", text: "Skills" },
+    { href: "#contact", text: "Contato" }
 ];
 ---
 
@@ -24,6 +25,16 @@ const navLinks = [
             ))}
             <!--LINKS SOCIAIS-->
             <ul class="navbar-nav ms-lg-3 nav-icons">
+              <li class="nav-item">
+                    <a
+                        href="mailto:coutoozair@gmail.com"
+                        class="nav-link"
+                        title="Me envie um email: coutoozair@gmail.com"
+                        target="_blank"
+                    >
+                        <i class="fas fa-inbox fa-2x"></i>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a
                         href="https://github.com/marlon-couto"
@@ -44,18 +55,8 @@ const navLinks = [
                         <i class="fab fa-linkedin fa-2x"></i>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a
-                        href="mailto:coutoozair@gmail.com"
-                        class="nav-link"
-                        title="Me envie um email"
-                        target="_blank"
-                    >
-                        <i class="fas fa-inbox fa-2x"></i>
-                    </a>
-                </li>
             </ul>
-            <ThemeToggle></ThemeToggle>
         </ul>
+        <ThemeToggle></ThemeToggle>
     </div>
 </nav>

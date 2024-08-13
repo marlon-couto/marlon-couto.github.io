@@ -1,0 +1,20 @@
+---
+import ExperienceTimeline from "../ui/ExperienceTimeline.tsx";
+---
+
+<!--EXPERIÊNCIA PROFISSIONAL-->
+<section id="experience" class="experience pt-md-7 pt-6 pb-5 pb-md-6 min-vh-100">
+  <div class="container">
+    <!--TÍTULO-->
+    <div class="experience__title">
+      <h4 class="text-capitalize text-bg-primary fs-5 d-inline-block py-1 px-2">
+        Experiência
+      </h4>
+      <h2 class="text-capitalize display-5 mt-2 fw-bold">Minha experiência profissional</h2>
+    </div>
+  </div>
+  <!--CONTEÚDO-->
+  <div class="row experience__content">
+    <ExperienceTimeline client:only="react" />
+  </div>
+</section>

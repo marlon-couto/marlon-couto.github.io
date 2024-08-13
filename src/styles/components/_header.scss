@@ -1,102 +1,118 @@
 @use "../abstracts" as a;
 
 .header {
-    .row {
-        @include a.breakpointDown(large) {
-            flex-direction: column-reverse;
-            gap: 6rem;
-        }
-
-        @include a.breakpointDown(medium) {
-            gap: 2.5rem;
-        }
+  .row {
+    @include a.breakpointDown(large) {
+      flex-direction: column-reverse;
+      gap: 6rem;
     }
 
-    &__txt {
-        @include a.breakpointDown(large) {
-            text-align: center;
-        }
+    @include a.breakpointDown(medium) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__txt {
+    @include a.breakpointDown(large) {
+      text-align: center;
+    }
+  }
+
+  &__typing {
+    // Texto com efeito gradiente.
+    // Usei a referência abaixo como inspiração.
+    // https://cssgradient.io/blog/css-gradient-text/
+    @include a.textGradient(a.$purple, a.$pink);
+
+    &::after {
+      display: inline;
+      content: "|";
+      animation: blinkCursor 0.75s infinite;
     }
 
-    &__typing {
-        // Texto com efeito gradiente.
-        // Usei a referência abaixo como inspiração.
-        // https://cssgradient.io/blog/css-gradient-text/
-        @include a.textGradient(a.$purple, a.$pink);
+    &::selection {
+      background-color: var(--bs-primary);
+      -webkit-text-fill-color: var(--bs-light);
+    }
+  }
 
-        &::after {
-            display: inline;
-            content: "|";
-            animation: blinkCursor 0.75s infinite;
-        }
+  .typed-cursor {
+    display: none;
+    opacity: 0;
+  }
 
-        &::selection {
-            background-color: var(--bs-primary);
-            -webkit-text-fill-color: var(--bs-light);
-        }
+  &__btn {
+    @include a.breakpointDown(large) {
+      justify-content: center;
     }
 
-    .typed-cursor {
-        display: none;
-        opacity: 0;
+    @include a.breakpointDown(medium) {
+      flex-direction: column;
+      margin-top: 2rem !important;
+      padding-bottom: 4rem;
+    }
+  }
+
+  &__img {
+    width: 25.625rem;
+    height: 25.625rem;
+
+    @include a.breakpointDown(medium) {
+      width: 17.5rem;
+      height: 17.5rem;
+      margin-top: 4rem;
+    }
+  }
+
+  // Seta Animada.
+  // Usei a referência abaixo para criar minha própria implementação.
+  // https://codepen.io/kchez/pen/rqvEBB?editors=0100
+  &__arrow {
+    bottom: 8rem;
+    left: 50%;
+
+    @include a.breakpointDown(medium) {
+      bottom: 7rem;
     }
 
-    &__btn {
-        @include a.breakpointDown(large) {
-            justify-content: center;
-        }
+    a {
+      position: relative;
+      display: inline-block;
 
-        @include a.breakpointDown(medium) {
-            flex-direction: column;
-            margin-top: 2rem !important;
-            padding-bottom: 4rem;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: -50px;
+        bottom: -100px;
+        left: -50px;
+        background: transparent;
+        z-index: 5;
+      }
+
+      &::after {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: auto;
+        content: "";
+        transform: rotate(45deg);
+        animation: 3s animateArrow infinite ease;
+        border-right: 0.3125rem solid var(--bs-body-color);
+        border-bottom: 0.3125rem solid var(--bs-body-color);
+
+        @include a.breakpointDown(small) {
+          width: 0.9375rem;
+          height: 0.9375rem;
+          border-right: 0.25rem solid var(--bs-body-color);
+          border-bottom: 0.25rem solid var(--bs-body-color);
         }
+      }
     }
-
-    &__img {
-        width: 25.625rem;
-        height: 25.625rem;
-
-        @include a.breakpointDown(medium) {
-            width: 17.5rem;
-            height: 17.5rem;
-            margin-top: 4rem;
-        }
-    }
-
-    // Seta Animada.
-    // Usei a referência abaixo para criar minha própria implementação.
-    // https://codepen.io/kchez/pen/rqvEBB?editors=0100
-    &__arrow {
-        bottom: 8rem;
-        left: 50%;
-
-        @include a.breakpointDown(medium) {
-            bottom: 7rem;
-        }
-
-        a::after {
-            position: absolute;
-            z-index: 10;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 1.25rem;
-            height: 1.25rem;
-            margin: auto;
-            content: "";
-            transform: rotate(45deg);
-            animation: 3s animateArrow infinite ease;
-            border-right: 0.3125rem solid var(--bs-body-color);
-            border-bottom: 0.3125rem solid var(--bs-body-color);
-
-            @include a.breakpointDown(small) {
-                width: 0.9375rem;
-                height: 0.9375rem;
-                border-right: 0.25rem solid var(--bs-body-color);
-                border-bottom: 0.25rem solid var(--bs-body-color);
-            }
-        }
-    }
+  }
 }

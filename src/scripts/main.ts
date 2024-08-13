@@ -227,18 +227,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const formInputs = document.querySelectorAll("#inputName, #inputEmail, #inputMessage") as NodeListOf<HTMLInputElement>;
-const inputName = document.querySelector('#inputName') as HTMLInputElement;
-const inputEmail = document.querySelector('#inputEmail') as HTMLInputElement;
-const inputMessage = document.querySelector('#inputMessage') as HTMLInputElement;
-const contactBtn = document.querySelector('#contactBtn') as HTMLButtonElement;
+const formInputs = document.querySelectorAll(
+  "#inputName, #inputEmail, #inputMessage",
+) as NodeListOf<HTMLInputElement>;
+const inputName = document.querySelector("#inputName") as HTMLInputElement;
+const inputEmail = document.querySelector("#inputEmail") as HTMLInputElement;
+const inputMessage = document.querySelector(
+  "#inputMessage",
+) as HTMLInputElement;
+const contactBtn = document.querySelector("#contactBtn") as HTMLButtonElement;
 
 // Habilita o botão de envio apenas se o formulário for válido.
 formInputs.forEach((input) => {
   input.addEventListener("input", () => {
     const inputNameText = inputName.value.toString();
     const nameRegex = new RegExp(/^[a-zA-Z]+$/);
-    const isValidName = nameRegex.test(inputNameText) && inputNameText.length >= 2;
+    const isValidName =
+      nameRegex.test(inputNameText) && inputNameText.length >= 2;
     const emailRegex = new RegExp(
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
     );
@@ -253,7 +258,7 @@ formInputs.forEach((input) => {
   });
 });
 
-const contactForm = document.querySelector('#contactForm') as HTMLElement;
+const contactForm = document.querySelector("#contactForm") as HTMLElement;
 
 // Mostra mensagens de validação no formulário.
 inputMessage.addEventListener("change", () => {
