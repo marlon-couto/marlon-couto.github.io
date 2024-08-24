@@ -11,17 +11,13 @@ window.addEventListener("scroll", () => {
     navbar.classList.add("navbar-sticky");
   } else {
     navbar.classList.remove("navbar-sticky");
-    navLinksInactive.forEach((link) => {
-      link.classList.remove("inactive");
-    });
+    navLinksInactive.forEach((link) => link.classList.remove("inactive"));
   }
 });
-
 const sections = document.querySelectorAll(
   "#header, #aboutMe, #skills, #contact",
 ) as NodeListOf<HTMLElement>;
-
-const linkAtivo = document.querySelector("nav .nav-link.active") as HTMLElement;
+const activeLink = document.querySelector("nav .nav-link.active") as HTMLElement;
 
 // Realça na barra de navegação qual a seção atual da página que a pessoa usuária está.
 // https://codepen.io/mishunov/pen/opeRdL?editors=0010
@@ -35,18 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Itera sobre as entradas observadas.
   // 2. Verifica se a entrada está intersectando.
   // 3. Chama a função de tratamento de interseção.
-  const observer = new IntersectionObserver((entradas) => {
-    entradas.forEach((entrada) => {
-      if (entrada.isIntersecting) {
-        intersectionHandler(entrada);
-      }
-    });
+  const observer = new IntersectionObserver((x) => {
+    x.forEach((y) => y.isIntersecting && intersectionHandler(y));
   }, config);
 
   // Observa cada elemento com os IDs especificados.
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+  sections.forEach((section) => observer.observe(section));
 
   // Função para lidar com a interseção de elementos.
   // 1. Obtém o ID da seção intersectada.
@@ -54,42 +44,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Seleciona o elemento de navegação que deve estar ativo com base no ID da seção.
   // 4. Remove a classe 'active' do elemento de navegação atualmente ativo, se existir.
   // 5. Adiciona a classe 'active' ao elemento de navegação que deve estar ativo, se existir.
-  const intersectionHandler = (entrada: IntersectionObserverEntry) => {
-    const sectionId = entrada.target.id;
-    const deveriaEstarAtivo = document.querySelector(
+  const intersectionHandler = (entry: IntersectionObserverEntry) => {
+    const sectionId = entry.target.id;
+    const shouldBeActive = document.querySelector(
       `nav .nav-link[href="#${sectionId}"]`,
     );
-
-    if (linkAtivo && deveriaEstarAtivo && linkAtivo != deveriaEstarAtivo) {
-      linkAtivo.classList.remove("active");
-      deveriaEstarAtivo.classList.add("active");
+    if (activeLink && shouldBeActive && activeLink != shouldBeActive) {
+      activeLink.classList.remove("active");
+      shouldBeActive.classList.add("active");
     }
   };
 });
 
-// Retorna o tema de cores atual (light ou dark).
-const obterTema = () => {
-  const tema = localStorage.getItem("tema");
-  if (tema) {
-    return tema;
-  }
+const themeString = "theme_464af48860c340f3ba99282860e21c7f";
 
+// Retorna o tema de cores atual (light ou dark).
+const getTheme = () => {
+  const theme = localStorage.getItem(themeString);
+  if (theme) return theme;
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 };
 
-const iconeDeSol = document.querySelector("i.fa-sun") as HTMLElement;
-const iconeDeLua = document.querySelector("i.fa-moon") as HTMLElement;
+const sunIcon = document.querySelector("i.fa-sun") as HTMLElement;
+const moonIcon = document.querySelector("i.fa-moon") as HTMLElement;
 
 // Muda o ícone para combinar com o tema atual.
-const mostrarIconesDeTema = () => {
-  if (obterTema() === "dark") {
-    iconeDeSol.style.display = "block";
-    iconeDeLua.style.display = "none";
+const toggleThemeIcons = () => {
+  if (getTheme() === "dark") {
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
   } else {
-    iconeDeSol.style.display = "none";
-    iconeDeLua.style.display = "block";
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
   }
 };
 
@@ -99,31 +87,31 @@ const themeToggle = document.querySelector("#themeToggle") as HTMLInputElement;
 // salva o tema no armazenamento local do navegador
 // e adiciona um efeito de transição ao ícone.
 (() => {
-  if (obterTema() === "dark") {
+  if (getTheme() === "dark") {
     themeToggle.checked = true;
-    localStorage.setItem("tema", "dark");
-    iconeDeLua.classList.add("animated-icon");
-    mostrarIconesDeTema();
+    localStorage.setItem(themeString, "dark");
+    moonIcon.classList.add("animated-icon");
+    toggleThemeIcons();
   } else {
     themeToggle.checked = false;
-    localStorage.setItem("tema", "light");
-    iconeDeSol.classList.add("animated-icon");
-    mostrarIconesDeTema();
+    localStorage.setItem(themeString, "light");
+    sunIcon.classList.add("animated-icon");
+    toggleThemeIcons();
   }
 })();
 
 // Muda o tema de cores do Bootstrap se o switch for clicado
 // e salva o novo tema no armazenamento local.
 themeToggle.addEventListener("click", () => {
-  if (obterTema() == "dark") {
+  if (getTheme() == "dark") {
     localStorage.setItem("tema", "light");
-    mostrarIconesDeTema();
+    toggleThemeIcons();
   } else {
     localStorage.setItem("tema", "dark");
-    mostrarIconesDeTema();
+    toggleThemeIcons();
   }
 
-  document.documentElement.setAttribute("data-bs-theme", obterTema());
+  document.documentElement.setAttribute("data-bs-theme", getTheme());
 });
 
 const navbarNavOverlay = document.querySelector(
@@ -135,7 +123,6 @@ const navbarLinks = document.querySelector("#navbarLinks") as HTMLElement;
 navbarNavOverlay.addEventListener("click", () => {
   navbarLinks.classList.toggle("navbar__overlay");
 });
-
 const navbarNavOverlayInput = document.querySelector(
   "#navbarNavOverlay > input",
 ) as HTMLInputElement;
@@ -146,7 +133,6 @@ const navbarNavOverlayInput = document.querySelector(
     navbarNavOverlayInput.checked = false;
   }
 })();
-
 const navItems = document.querySelectorAll(
   "#navbarLinks > .nav-item",
 ) as NodeListOf<HTMLInputElement>;
@@ -176,57 +162,50 @@ navItems.forEach((item) => {
     backDelay: 1000,
     backSpeed: 75,
   });
-
   typed.start();
 })();
 
 // Calcula a posição atual da tela no navegador da pessoa usuária.
-const obterPosicaoDaJanela = () => {
+const getWindowPosition = () => {
   const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
-
   const scrollPosition =
     window.scrollY ||
     document.documentElement.scrollTop ||
     document.body.scrollTop ||
     0;
-
   return windowHeight + scrollPosition;
 };
 
 // As funções abaixo adicionam um efeito de animação ao conteúdo
 // quando a pessoa usuária rola a tela até a seção referida.
-
 const aboutMe = document.querySelector("#aboutMe") as HTMLElement;
 
 // Sobre Mim
 window.addEventListener("scroll", () => {
   const aboutMeTop = aboutMe.getBoundingClientRect().top + window.scrollY;
-  if (obterPosicaoDaJanela() > aboutMeTop) {
+  if (getWindowPosition() > aboutMeTop) {
     aboutMe.classList.add("about-me--animated");
   }
 });
-
 const skills = document.querySelector("#skills") as HTMLElement;
 
 // Skills
 window.addEventListener("scroll", () => {
   const skillsTop = skills.getBoundingClientRect().top + window.scrollY;
-  if (obterPosicaoDaJanela() > skillsTop) {
+  if (getWindowPosition() > skillsTop) {
     skills.classList.add("skills--animated");
   }
 });
-
 const contact = document.querySelector("#contact") as HTMLElement;
 
 // Contato
 window.addEventListener("scroll", () => {
   const contactTop = contact.getBoundingClientRect().top + window.scrollY;
-  if (obterPosicaoDaJanela() > contactTop) {
+  if (getWindowPosition() > contactTop) {
     contact.classList.add("contact--animated");
   }
 });
-
 const formInputs = document.querySelectorAll(
   "#inputName, #inputEmail, #inputMessage",
 ) as NodeListOf<HTMLInputElement>;
@@ -247,7 +226,6 @@ formInputs.forEach((input) => {
     const emailRegex = new RegExp(
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
     );
-
     const isValidEmail = emailRegex.test(inputEmail.value.toString());
     const isValidMessage = inputMessage.value.toString().length >= 10;
     if (isValidEmail && isValidMessage && isValidName) {
@@ -257,7 +235,6 @@ formInputs.forEach((input) => {
     }
   });
 });
-
 const contactForm = document.querySelector("#contactForm") as HTMLElement;
 
 // Mostra mensagens de validação no formulário.

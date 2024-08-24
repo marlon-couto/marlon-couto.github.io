@@ -6,16 +6,16 @@ import Experience from "../components/Experience.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
 
-const curriculum = "https://docs.google.com/document/d/1DCS6AFAudTjnK_K3m4E8oaipls8IqB3kUgOomCyx0qI/edit?usp=sharing";
+const curriculumLink = "https://docs.google.com/document/d/1DCS6AFAudTjnK_K3m4E8oaipls8IqB3kUgOomCyx0qI/edit?usp=sharing";
 ---
 
 <Layout title="Marlon Couto | Desenvolvedor Web">
-  <Header curriculum={curriculum}></Header>
+  <Header curriculum={curriculumLink}></Header>
   <!--MAIN-->
   <main>
     <AboutMe></AboutMe>
     <Experience></Experience>
-    <Skills curriculum={curriculum}></Skills>
+    <Skills curriculum={curriculumLink}></Skills>
     <Contact></Contact>
   </main>
 </Layout>
