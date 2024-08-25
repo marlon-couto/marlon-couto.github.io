@@ -20,14 +20,12 @@ body {
 }
 
 // Altera o comportamento padrão da seleção de texto.
-
 ::selection {
   color: var(--bs-light);
   background-color: var(--bs-primary);
 }
 
 // Personaliza a barra de rolagem.
-
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
