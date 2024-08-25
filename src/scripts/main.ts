@@ -2,7 +2,7 @@ import Typed from "typed.js";
 
 const navbar = document.querySelector(".navbar") as HTMLElement;
 const navLinksInactive = document.querySelectorAll(
-  "#navbarLinks .nav-link.inactive",
+  "#navbar-links .nav-link.inactive",
 ) as NodeListOf<HTMLElement>;
 
 // Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela a partir do topo.
@@ -15,7 +15,7 @@ window.addEventListener("scroll", () => {
   }
 });
 const sections = document.querySelectorAll(
-  "#header, #aboutMe, #skills, #contact",
+  "#header, #about-me, #skills, #contact",
 ) as NodeListOf<HTMLElement>;
 const activeLink = document.querySelector(
   "nav .nav-link.active",
@@ -83,7 +83,7 @@ const toggleThemeIcons = () => {
   }
 };
 
-const themeToggle = document.querySelector("#themeToggle") as HTMLInputElement;
+const themeToggle = document.querySelector("#theme-toggle") as HTMLInputElement;
 
 // Marca/desmarca a caixa de seleção que indica o tema atual,
 // salva o tema no armazenamento local do navegador
@@ -116,40 +116,38 @@ themeToggle.addEventListener("click", () => {
   document.documentElement.setAttribute("data-bs-theme", getTheme());
 });
 
-const navbarNavOverlay = document.querySelector(
-  "#navbarNavOverlay",
-) as HTMLElement;
-const navbarLinks = document.querySelector("#navbarLinks") as HTMLElement;
+const navbarOverlay = document.querySelector("#navbar-overlay") as HTMLElement;
+const navbarLinks = document.querySelector("#navbar-links") as HTMLElement;
 
 // Exibe o overlay ao clicar no menu hambúrguer.
-navbarNavOverlay.addEventListener("click", () => {
+navbarOverlay.addEventListener("click", () => {
   navbarLinks.classList.toggle("navbar__overlay");
 });
-const navbarNavOverlayInput = document.querySelector(
-  "#navbarNavOverlay > input",
+const navbarOverlayInput = document.querySelector(
+  "#navbar-overlay > input",
 ) as HTMLInputElement;
 
 // Garante que o menu hambúrguer esteja fechado ao carregar a página.
 (() => {
-  if (navbarNavOverlayInput) {
-    navbarNavOverlayInput.checked = false;
+  if (navbarOverlayInput) {
+    navbarOverlayInput.checked = false;
   }
 })();
 const navItems = document.querySelectorAll(
-  "#navbarLinks > .nav-item",
+  "#navbar-links > .nav-item",
 ) as NodeListOf<HTMLInputElement>;
 
 // Fecha o menu overlay ao clicar em algum link.
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
-    navbarNavOverlayInput.checked = false;
+    navbarOverlayInput.checked = false;
     navbarLinks.classList.remove("navbar__overlay");
   });
 });
 
 // Exibe o texto animado com efeito de máquina de escrever.
 (() => {
-  const typed = new Typed("#typedText", {
+  const typed = new Typed("#typed-text", {
     strings: [
       ".NET",
       "Angular",
@@ -181,7 +179,7 @@ const getWindowPosition = () => {
 
 // As funções abaixo adicionam um efeito de animação ao conteúdo
 // quando a pessoa usuária rola a tela até a seção referida.
-const aboutMe = document.querySelector("#aboutMe") as HTMLElement;
+const aboutMe = document.querySelector("#about-me") as HTMLElement;
 
 // Sobre Mim
 window.addEventListener("scroll", () => {
@@ -209,20 +207,20 @@ window.addEventListener("scroll", () => {
   }
 });
 const formInputs = document.querySelectorAll(
-  "#inputName, #inputEmail, #inputMessage",
+  "#input-name, #input-email, #input-message",
 ) as NodeListOf<HTMLInputElement>;
-const inputName = document.querySelector("#inputName") as HTMLInputElement;
-const inputEmail = document.querySelector("#inputEmail") as HTMLInputElement;
+const inputName = document.querySelector("#input-name") as HTMLInputElement;
+const inputEmail = document.querySelector("#input-email") as HTMLInputElement;
 const inputMessage = document.querySelector(
-  "#inputMessage",
+  "#input-message",
 ) as HTMLInputElement;
-const contactBtn = document.querySelector("#contactBtn") as HTMLButtonElement;
+const contactBtn = document.querySelector("#contact-btn") as HTMLButtonElement;
 
 // Habilita o botão de envio apenas se o formulário for válido.
 formInputs.forEach((input) => {
   input.addEventListener("input", () => {
     const inputNameText = inputName.value.toString();
-    const nameRegex = new RegExp(/^[a-zA-Z]+$/);
+    const nameRegex = new RegExp(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/);
     const isValidName =
       nameRegex.test(inputNameText) && inputNameText.length >= 2;
     const emailRegex = new RegExp(
@@ -237,7 +235,7 @@ formInputs.forEach((input) => {
     }
   });
 });
-const contactForm = document.querySelector("#contactForm") as HTMLElement;
+const contactForm = document.querySelector("#contact-form") as HTMLElement;
 
 // Mostra mensagens de validação no formulário.
 inputMessage.addEventListener("change", () => {

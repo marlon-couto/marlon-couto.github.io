@@ -6,32 +6,32 @@
 <div class="col-lg-6 px-5">
   <form
     class="contact__form"
-    id="contactForm"
+    id="contact-form"
     novalidate
     action="https://formspree.io/f/xoqozazw"
     method="post"
   >
     <div class="mb-5">
-      <label class="form-label" for="inputName">Nome</label>
+      <label class="form-label" for="input-name">Primeiro Nome</label>
       <input
         type="text"
         class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
         placeholder="Como você se chama?"
-        id="inputName"
+        id="input-name"
         required
         minlength="2"
-        pattern="^[a-zA-Z]+$"
+        pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\\s]+$"
         name="name"
       />
-      <div class="invalid-feedback">O nome deve conter apenas números.</div>
+      <div class="invalid-feedback">O nome deve conter apenas letras e espaços.</div>
     </div>
     <div class="mb-5">
-      <label class="form-label" for="inputEmail">E-mail</label>
+      <label class="form-label" for="input-email">E-mail</label>
       <input
         type="email"
         class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 py-2"
         placeholder="Digite seu melhor e-mail."
-        id="inputEmail"
+        id="input-email"
         required
         name="email"
       />
@@ -40,12 +40,12 @@
       </div>
     </div>
     <div class="mb-5">
-      <label class="form-label" for="inputMessage">Mensagem</label>
+      <label class="form-label" for="input-message">Mensagem</label>
       <textarea
         class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
         placeholder="Como posso te ajudar?"
         rows="6"
-        id="inputMessage"
+        id="input-message"
         required
         minlength="10"
         name="message"
@@ -58,7 +58,7 @@
       <button
         class="btn btn-primary"
         type="submit"
-        id="contactBtn"
+        id="contact-btn"
         disabled
       >Enviar
       </button>

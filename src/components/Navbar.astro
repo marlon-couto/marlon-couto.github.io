@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 const navLinks = [
     { href: "#header", text: "Início" },
-    { href: "#aboutMe", text: "Sobre Mim" },
+    { href: "#about-me", text: "Sobre Mim" },
     { href: "#experience", text: "Experiência" },
     { href: "#skills", text: "Skills" },
     { href: "#contact", text: "Contato" }
@@ -17,7 +17,7 @@ const navLinks = [
         <a href="#" class="navbar-brand fs-3 fw-semibold alt-font">Marlon Couto</a>
         <HamburgerMenu></HamburgerMenu>
         <!--LINKS DE NAVEGAÇÃO-->
-        <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbarLinks">
+        <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbar-links">
             {navLinks.map(link => (
                 <li class="nav-item">
                     <a href={link.href} class="nav-link link-lg">{link.text}</a>
