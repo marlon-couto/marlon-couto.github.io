@@ -1,7 +1,7 @@
 @use "../abstracts" as a;
 
 .experience {
-   &__title {
+  &__title {
     .about-me--animated & {
       @include a.animateUp();
     }

@@ -6,6 +6,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 const experiences = [
   {
+    key: "trybe",
     src: "trybe.jpg",
     alt: "Trybe",
     link: "https://betrybe.com",
@@ -18,6 +19,7 @@ const experiences = [
       "Realização de monitorias para resolução de dúvidas, abordando tecnologias de back-end.",
   },
   {
+    key: "freelancer",
     src: "freelancer.svg",
     alt: "Freelancing",
     link: "",
@@ -27,9 +29,10 @@ const experiences = [
     title: "Desenvolvedor Web Full-Stack",
     subtitle: "Remoto",
     description:
-      "Criação e manutenção de sites e APIs usando soluções personalizadas para cada cliente."
+      "Criação e manutenção de sites e APIs usando soluções personalizadas para cada cliente.",
   },
   {
+    key: "trieduc",
     src: "trieduc.png",
     alt: "TRIEduc",
     link: "https://trieduc.com.br",
@@ -39,7 +42,7 @@ const experiences = [
     title: "Desenvolvedor C# Júnior",
     subtitle: "Remoto",
     description:
-      "Desenvolvimento e manutenção dos sistemas e bancos de dados da empresa."
+      "Desenvolvimento e manutenção dos sistemas e bancos de dados da empresa.",
   },
 ];
 
@@ -48,6 +51,7 @@ const ExperienceTimeline = () => {
     <VerticalTimeline className="experience__timeline">
       {experiences.map((experience) => (
         <VerticalTimelineElement
+          key={experience.key}
           className="vertical-timeline-element--work"
           contentStyle={{
             background: experience.backgroundColor,

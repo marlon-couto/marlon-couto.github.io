@@ -17,7 +17,9 @@ window.addEventListener("scroll", () => {
 const sections = document.querySelectorAll(
   "#header, #aboutMe, #skills, #contact",
 ) as NodeListOf<HTMLElement>;
-const activeLink = document.querySelector("nav .nav-link.active") as HTMLElement;
+const activeLink = document.querySelector(
+  "nav .nav-link.active",
+) as HTMLElement;
 
 // Realça na barra de navegação qual a seção atual da página que a pessoa usuária está.
 // https://codepen.io/mishunov/pen/opeRdL?editors=0010
@@ -104,10 +106,10 @@ const themeToggle = document.querySelector("#themeToggle") as HTMLInputElement;
 // e salva o novo tema no armazenamento local.
 themeToggle.addEventListener("click", () => {
   if (getTheme() == "dark") {
-    localStorage.setItem("tema", "light");
+    localStorage.setItem(themeString, "light");
     toggleThemeIcons();
   } else {
-    localStorage.setItem("tema", "dark");
+    localStorage.setItem(themeString, "dark");
     toggleThemeIcons();
   }
 
