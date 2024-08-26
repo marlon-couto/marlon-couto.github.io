@@ -1,11 +1,9 @@
 ---
-interface Props {
-  curriculum: string;
-}
+import store from "../scripts/store"
 ---
 
 <!--HEADER-->
-<header class="header vh-100 d-flex align-items-center" id="header">
+<header class="header vh-100 d-flex align-items-center" id={store.getId("HEADER")}>
   <div class="container">
     <div class="row">
       <!--CONTEÚDO DA ESQUERDA-->
@@ -22,9 +20,9 @@ interface Props {
         </h2>
         <p class="fs-5 fw-light text-secondary">Baseado em Salvador, BA.</p>
         <div class="mt-4 d-flex gap-4 align-items-center header__btn">
-          <a href="#about-me" class="btn btn-primary btn-lg">Sobre mim</a>
+          <a href={"#" + store.getId("ABOUTME")} class="btn btn-primary btn-lg">Sobre mim</a>
           <a
-            href={Astro.props.curriculum}
+            href={store.curriculumLink.get()}
             download
             class="fs-5 link-secondary text-capitalize"
             target="_blank"
@@ -56,7 +54,7 @@ interface Props {
     </div>
     <!--SETA ANIMADA-->
     <div class="row mt-3 position-absolute header__arrow">
-      <a href="#aboutMe"></a>
+      <a href={"#" + store.getHref("ABOUTME")}></a>
     </div>
   </div>
 </header>

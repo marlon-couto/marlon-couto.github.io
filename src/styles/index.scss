@@ -39,6 +39,10 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
 }
 
+a {
+  cursor: pointer;
+}
+
 // Adiciona efeitos de transição aos botões.
 .btn {
   &:link,

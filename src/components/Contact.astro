@@ -1,10 +1,11 @@
 ---
+import store from "../scripts/store";
 import ContactForm from "./ContactForm.astro";
 ---
 
 <!--CONTATO-->
 <section
-  id="contact"
+  id={store.getId("CONTACT")}
   class="contact pt-md-7 pt-6 pb-md-6 min-vh-100"
 >
   <div class="container">

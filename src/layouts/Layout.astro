@@ -1,11 +1,8 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import store from "../scripts/store";
 import "../styles/index.scss";
-
-interface Props {
-  title: string;
-}
 ---
 
 <html lang="pt-br">
@@ -23,12 +20,15 @@ interface Props {
       rel="stylesheet"
     />
     <!--LECKERLI ONE-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{Astro.props.title}</title>
+    <title>{store.siteTitle.get()}</title>
   </head>
 
   <body>
