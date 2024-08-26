@@ -70,7 +70,7 @@ const ExperienceTimeline = () => {
           key={uuid()}
           className="vertical-timeline-element--work"
           contentStyle={{
-            background: defaultTheme.backgroundColor,
+            backgroundColor: defaultTheme.backgroundColor,
             color: defaultTheme.color,
           }}
           contentArrowStyle={{
@@ -78,7 +78,7 @@ const ExperienceTimeline = () => {
           }}
           date={experience.date}
           iconStyle={{
-            background: defaultTheme.backgroundColor,
+            backgroundColor: defaultTheme.backgroundColor,
             color: defaultTheme.color,
           }}
           icon={
