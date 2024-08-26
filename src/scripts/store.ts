@@ -10,8 +10,6 @@ const sections = atom([
 ]);
 const getId = (constant: string) =>
   sections.get().find((x) => x.constant === constant)?.id;
-const getHref = (constant: string) =>
-  "#" + sections.get().find((x) => x.constant === constant)?.id;
 const curriculumLink = atom(
   "https://docs.google.com/document/d/1DCS6AFAudTjnK_K3m4E8oaipls8IqB3kUgOomCyx0qI/edit?usp=sharing",
 );
@@ -19,7 +17,6 @@ const curriculumLink = atom(
 export default {
   siteTitle,
   sections,
-  getHref,
   getId,
   curriculumLink,
 };
