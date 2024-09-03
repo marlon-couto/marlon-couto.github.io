@@ -1,7 +1,7 @@
 ---
 import HamburgerMenu from "./HamburgerMenu.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import store from "../scripts/store";
+import { sections } from "../scripts/store";
 ---
 
 <!--NAVBAR-->
@@ -12,7 +12,7 @@ import store from "../scripts/store";
     <!--LINKS DE NAVEGAÇÃO-->
     <ul class="d-none navbar-nav d-lg-flex mt-2" id="navbar-links">
       {
-        store.sections.get().map((section) => (
+        sections.get().map((section) => (
           <li class="nav-item">
             <a href={"#" + section.id} class="nav-link link-lg">
               {section.description}

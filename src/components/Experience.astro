@@ -1,11 +1,11 @@
 ---
-import store from "../scripts/store";
+import { getSectionId } from "../scripts/store";
 import ExperienceTimeline from "../ui/ExperienceTimeline.tsx";
 ---
 
 <!--EXPERIÊNCIA PROFISSIONAL-->
 <section
-  id={store.getId("EXPERIENCE")}
+  id={getSectionId("EXPERIENCE")}
   class="experience pt-md-7 pt-6 pb-5 pb-md-6 min-vh-100"
 >
   <div class="container">

@@ -1,10 +1,10 @@
 ---
-import store from "../scripts/store";
+import { getSectionId } from "../scripts/store";
 ---
 
 <!--SOBRE MIM-->
 <section
-  id={store.getId("ABOUTME")}
+  id={getSectionId("ABOUTME")}
   class="about-me bg-body-secondary pt-md-7 pt-6 pb-5 pb-md-6 min-vh-100"
 >
   <div class="container">
