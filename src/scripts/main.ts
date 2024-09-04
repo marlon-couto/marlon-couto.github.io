@@ -1,4 +1,6 @@
+import axios from "axios";
 import Typed from "typed.js";
+import { setToken } from "./store";
 
 const navbar = document.querySelector(".navbar") as HTMLElement;
 const navLinksInactive = document.querySelectorAll(
@@ -206,6 +208,32 @@ window.addEventListener("scroll", () => {
     contact.classList.add("contact--animated");
   }
 });
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    if (contact) {
+      const res = await axios.post(
+        `${import.meta.env.PUBLIC_FORMS_API_URL}/auth/login`,
+        {
+          username: import.meta.env.PUBLIC_FORMS_API_USERNAME,
+          password: import.meta.env.PUBLIC_FORMS_API_PASSWORD,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      if (res.status !== 200) {
+        throw new Error("Erro ao obter token.");
+      }
+
+      console.log(res.data);
+      setToken(res.data);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
 const formInputs = document.querySelectorAll(
   "#input-name, #input-email, #input-message",
 ) as NodeListOf<HTMLInputElement>;
@@ -234,6 +262,35 @@ formInputs.forEach((input) => {
       contactBtn.disabled = true;
     }
   });
+});
+contactBtn.addEventListener("click", async () => {
+  try {
+    const res = await axios.post(
+      `${import.meta.env.PUBLIC_FORMS_API_URL}/email/sendMe`,
+      {
+        name: inputName.value,
+        email: inputEmail.value,
+        message: inputMessage.value,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${import.meta.env.PUBLIC_FORMS_API_KEY}`,
+        },
+      },
+    );
+    if (res.status !== 200) {
+      throw new Error("Erro ao enviar e-mail.");
+    }
+
+    alert("Mensagem enviada com sucesso!");
+    inputName.value = "";
+    inputEmail.value = "";
+    inputMessage.value = "";
+    contactBtn.disabled = true;
+  } catch (error) {
+    console.error(error);
+  }
 });
 const contactForm = document.querySelector("#contact-form") as HTMLElement;
 
