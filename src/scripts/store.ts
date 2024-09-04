@@ -1,17 +1,17 @@
 import { atom } from "nanostores";
 
-const siteTitle = atom("Marlon Couto | Desenvolvedor Web");
-const sections = atom([
+export const siteTitle = atom("Marlon Couto | Desenvolvedor Web");
+export const sections = atom([
   { constant: "HEADER", id: "header", description: "Início" },
   { constant: "ABOUTME", id: "about-me", description: "Sobre Mim" },
   { constant: "EXPERIENCE", id: "experience", description: "Experiência" },
   { constant: "SKILLS", id: "skills", description: "Skills" },
   { constant: "CONTACT", id: "contact", description: "Contato" },
 ]);
-const curriculumLink = atom(
+export const curriculumLink = atom(
   "https://docs.google.com/document/d/1DCS6AFAudTjnK_K3m4E8oaipls8IqB3kUgOomCyx0qI/edit?usp=sharing",
 );
-const experiences = atom([
+export const experiences = atom([
   {
     src: "trybe.jpg",
     alt: "Trybe",
@@ -20,7 +20,7 @@ const experiences = atom([
     title: "Summer Student",
     subtitle: "Remoto",
     description:
-    "Realização de monitorias para resolução de dúvidas, abordando tecnologias de back-end.",
+      "Realização de monitorias para resolução de dúvidas, abordando tecnologias de back-end.",
   },
   {
     src: "freelancer.svg",
@@ -30,7 +30,7 @@ const experiences = atom([
     title: "Desenvolvedor Web Full-Stack",
     subtitle: "Remoto",
     description:
-    "Criação e manutenção de sites e APIs usando soluções personalizadas para cada cliente.",
+      "Criação e manutenção de sites e APIs usando soluções personalizadas para cada cliente.",
   },
   {
     src: "trieduc.png",
@@ -40,23 +40,18 @@ const experiences = atom([
     title: "Desenvolvedor C# Júnior",
     subtitle: "Remoto",
     description:
-    "Desenvolvimento e manutenção dos sistemas e bancos de dados da empresa.",
+      "Desenvolvimento e manutenção dos sistemas e bancos de dados da empresa.",
   },
 ]);
-const defaultTheme = atom({
+export const defaultTheme = atom({
   color: "var(--bs-emphasis-color)",
   backgroundColor: "var(--bs-secondary-bg)",
 });
+export const tokenStore = atom<string | null>(null);
 
 // Métodos auxiliares
-const getSectionId = (constant: string) =>
+export const getSectionId = (constant: string) =>
   sections.get().find((x) => x.constant === constant)?.id;
 
-export {
-  siteTitle,
-  sections,
-  curriculumLink,
-  experiences,
-  defaultTheme,
-  getSectionId,
-};
+export const setToken = (token: string) => tokenStore.set(token);
+export const clearToken = () => tokenStore.set(null);
