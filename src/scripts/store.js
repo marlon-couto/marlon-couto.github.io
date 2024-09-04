@@ -3,7 +3,7 @@ import { atom } from "nanostores";
 export const siteTitle = atom("Marlon Couto | Desenvolvedor Web");
 export const sections = atom([
   { constant: "HEADER", id: "header", description: "Início" },
-  { constant: "ABOUTME", id: "about-me", description: "Sobre Mim" },
+  { constant: "ABOUT_ME", id: "about-me", description: "Sobre Mim" },
   { constant: "EXPERIENCE", id: "experience", description: "Experiência" },
   { constant: "SKILLS", id: "skills", description: "Skills" },
   { constant: "CONTACT", id: "contact", description: "Contato" },
