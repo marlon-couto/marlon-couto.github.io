@@ -2,10 +2,10 @@ import axios from "axios";
 import Typed from "typed.js";
 import { setToken } from "./store";
 
-const navbar = document.querySelector(".navbar") as HTMLElement;
+const navbar = document.querySelector(".navbar");
 const navLinksInactive = document.querySelectorAll(
   "#navbar-links .nav-link.inactive",
-) as NodeListOf<HTMLElement>;
+);
 
 // Adiciona efeito de transição à barra de navegação quando a pessoa usuária rola a tela a partir do topo.
 window.addEventListener("scroll", () => {
@@ -18,10 +18,10 @@ window.addEventListener("scroll", () => {
 });
 const sections = document.querySelectorAll(
   "#header, #about-me, #skills, #contact",
-) as NodeListOf<HTMLElement>;
+);
 const activeLink = document.querySelector(
   "nav .nav-link.active",
-) as HTMLElement;
+);
 
 // Realça na barra de navegação qual a seção atual da página que a pessoa usuária está.
 // https://codepen.io/mishunov/pen/opeRdL?editors=0010
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Seleciona o elemento de navegação que deve estar ativo com base no ID da seção.
   // 4. Remove a classe 'active' do elemento de navegação atualmente ativo, se existir.
   // 5. Adiciona a classe 'active' ao elemento de navegação que deve estar ativo, se existir.
-  const intersectionHandler = (entry: IntersectionObserverEntry) => {
+  const intersectionHandler = (entry) => {
     const sectionId = entry.target.id;
     const shouldBeActive = document.querySelector(
       `nav .nav-link[href="#${sectionId}"]`,
@@ -71,8 +71,8 @@ const getTheme = () => {
     : "light";
 };
 
-const sunIcon = document.querySelector("i.fa-sun") as HTMLElement;
-const moonIcon = document.querySelector("i.fa-moon") as HTMLElement;
+const sunIcon = document.querySelector("i.fa-sun");
+const moonIcon = document.querySelector("i.fa-moon");
 
 // Muda o ícone para combinar com o tema atual.
 const toggleThemeIcons = () => {
@@ -85,7 +85,7 @@ const toggleThemeIcons = () => {
   }
 };
 
-const themeToggle = document.querySelector("#theme-toggle") as HTMLInputElement;
+const themeToggle = document.querySelector("#theme-toggle");
 
 // Marca/desmarca a caixa de seleção que indica o tema atual,
 // salva o tema no armazenamento local do navegador
@@ -118,8 +118,8 @@ themeToggle.addEventListener("click", () => {
   document.documentElement.setAttribute("data-bs-theme", getTheme());
 });
 
-const navbarOverlay = document.querySelector("#navbar-overlay") as HTMLElement;
-const navbarLinks = document.querySelector("#navbar-links") as HTMLElement;
+const navbarOverlay = document.querySelector("#navbar-overlay");
+const navbarLinks = document.querySelector("#navbar-links");
 
 // Exibe o overlay ao clicar no menu hambúrguer.
 navbarOverlay.addEventListener("click", () => {
@@ -127,7 +127,7 @@ navbarOverlay.addEventListener("click", () => {
 });
 const navbarOverlayInput = document.querySelector(
   "#navbar-overlay > input",
-) as HTMLInputElement;
+);
 
 // Garante que o menu hambúrguer esteja fechado ao carregar a página.
 (() => {
@@ -137,7 +137,7 @@ const navbarOverlayInput = document.querySelector(
 })();
 const navItems = document.querySelectorAll(
   "#navbar-links > .nav-item",
-) as NodeListOf<HTMLInputElement>;
+);
 
 // Fecha o menu overlay ao clicar em algum link.
 navItems.forEach((item) => {
@@ -181,7 +181,7 @@ const getWindowPosition = () => {
 
 // As funções abaixo adicionam um efeito de animação ao conteúdo
 // quando a pessoa usuária rola a tela até a seção referida.
-const aboutMe = document.querySelector("#about-me") as HTMLElement;
+const aboutMe = document.querySelector("#about-me");
 
 // Sobre Mim
 window.addEventListener("scroll", () => {
@@ -190,7 +190,7 @@ window.addEventListener("scroll", () => {
     aboutMe.classList.add("about-me--animated");
   }
 });
-const skills = document.querySelector("#skills") as HTMLElement;
+const skills = document.querySelector("#skills");
 
 // Skills
 window.addEventListener("scroll", () => {
@@ -199,7 +199,7 @@ window.addEventListener("scroll", () => {
     skills.classList.add("skills--animated");
   }
 });
-const contact = document.querySelector("#contact") as HTMLElement;
+const contact = document.querySelector("#contact");
 
 // Contato
 window.addEventListener("scroll", () => {
@@ -236,13 +236,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 const formInputs = document.querySelectorAll(
   "#input-name, #input-email, #input-message",
-) as NodeListOf<HTMLInputElement>;
-const inputName = document.querySelector("#input-name") as HTMLInputElement;
-const inputEmail = document.querySelector("#input-email") as HTMLInputElement;
+);
+const inputName = document.querySelector("#input-name");
+const inputEmail = document.querySelector("#input-email");
 const inputMessage = document.querySelector(
   "#input-message",
-) as HTMLInputElement;
-const contactBtn = document.querySelector("#contact-btn") as HTMLButtonElement;
+);
+const contactBtn = document.querySelector("#contact-btn");
 
 // Habilita o botão de envio apenas se o formulário for válido.
 formInputs.forEach((input) => {
@@ -292,7 +292,7 @@ contactBtn.addEventListener("click", async () => {
     console.error(error);
   }
 });
-const contactForm = document.querySelector("#contact-form") as HTMLElement;
+const contactForm = document.querySelector("#contact-form");
 
 // Mostra mensagens de validação no formulário.
 inputMessage.addEventListener("change", () => {

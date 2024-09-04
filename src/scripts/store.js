@@ -47,11 +47,11 @@ export const defaultTheme = atom({
   color: "var(--bs-emphasis-color)",
   backgroundColor: "var(--bs-secondary-bg)",
 });
-export const tokenStore = atom<string | null>(null);
+export const tokenStore = atom(null);
 
 // Métodos auxiliares
-export const getSectionId = (constant: string) =>
+export const getSectionId = (constant) =>
   sections.get().find((x) => x.constant === constant)?.id;
 
-export const setToken = (token: string) => tokenStore.set(token);
+export const setToken = (token) => tokenStore.set(token);
 export const clearToken = () => tokenStore.set(null);
