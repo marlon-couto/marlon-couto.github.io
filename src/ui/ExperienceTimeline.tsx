@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { experiences, defaultTheme } from "../scripts/store";
 import "react-vertical-timeline-component/style.min.css";
 
-
 const ExperienceTimeline = () => {
   const [lineColor, setLineColor] = useState("");
 
