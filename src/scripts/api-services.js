@@ -3,18 +3,13 @@ import { setToken } from "./store";
 
 export const getToken = async () => {
   try {
-    if (contact) {
-      const token = localStorage.getItem("token");
-      const tokenExpiration = localStorage.getItem("token_expiration");
-      const tokenData =
-        token && tokenExpiration
-          ? { token, expiration: parseInt(tokenExpiration, 10) }
-          : null;
-      const isTokenExpired = new Date().getTime() > tokenData.expiration;
-      if (tokenData && !isTokenExpired) {
-        return;
-      }
-
+    const token = localStorage.getItem("token");
+    const tokenExpiration = localStorage.getItem("token_expiration");
+    const tokenData =
+      token && tokenExpiration
+        ? { token, expiration: parseInt(tokenExpiration, 10) }
+        : null;
+    if (!tokenData || new Date().getTime() > tokenData.expiration) {
       const res = await axios.post(
         `${import.meta.env.PUBLIC_FORMS_API_URL}/auth/login`,
         {
