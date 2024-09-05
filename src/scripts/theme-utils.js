@@ -119,6 +119,11 @@ export const closeHamburgerMenu = () => {
   }
 };
 
+export const toggleOverlayLinks = () => {
+  const navbarLinks = document.querySelector("#navbar-links");
+  navbarLinks.classList.toggle("navbar__overlay");
+};
+
 // Fecha o menu overlay ao clicar em algum link.
 export const closeOverlay = () => {
   const navbarLinks = document.querySelector("#navbar-links");

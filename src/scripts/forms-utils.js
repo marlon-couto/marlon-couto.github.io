@@ -31,3 +31,8 @@ export const sendFormData = async (button) => {
   message = "";
   button.disabled = true;
 };
+
+export const showFormValidationMessages = () => {
+  const contactForm = document.querySelector("#contact-form");
+  contactForm.classList.add("was-validated");
+};

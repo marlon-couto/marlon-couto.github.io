@@ -1,7 +1,7 @@
 import Typed from "typed.js";
 
 // Exibe o texto animado com efeito de máquina de escrever.
-export const typedText = () => {
+export const showTypedText = () => {
   const typed = new Typed("#typed-text", {
     strings: [
       ".NET",

@@ -1,18 +1,23 @@
 import { getToken } from "./api-services";
-import { sendFormData, validateForm } from "./forms-utils";
+import {
+  sendFormData,
+  showFormValidationMessages,
+  validateForm,
+} from "./forms-utils";
 import {
   animateSections,
   closeHamburgerMenu,
   closeOverlay,
   highlightNavbar,
   setInitialTheme,
+  toggleOverlayLinks,
   toggleTheme,
   transitionNavbar,
 } from "./theme-utils";
-import { typedText } from "./typed-text";
+import { showTypedText } from "./typed-text";
 
 // Inicia ao carregar a página.
-document.addEventListener("DOMContentLoaded", typedText);
+document.addEventListener("DOMContentLoaded", showTypedText);
 document.addEventListener("DOMContentLoaded", getToken);
 document.addEventListener("DOMContentLoaded", highlightNavbar);
 document.addEventListener("DOMContentLoaded", setInitialTheme);
@@ -25,10 +30,7 @@ themeToggle.addEventListener("click", toggleTheme);
 // Barra de navegação.
 window.addEventListener("scroll", transitionNavbar);
 const navbarOverlay = document.querySelector("#navbar-overlay");
-navbarOverlay.addEventListener("click", () => {
-  const navbarLinks = document.querySelector("#navbar-links");
-  navbarLinks.classList.toggle("navbar__overlay");
-});
+navbarOverlay.addEventListener("click", toggleOverlayLinks);
 const navItems = document.querySelectorAll("#navbar-links > .nav-item");
 navItems.forEach((item) => {
   item.addEventListener("click", closeOverlay);
@@ -51,7 +53,4 @@ contactBtn.addEventListener("click", (e) => sendFormData(e.target));
 
 // Mostra mensagens de validação no formulário.
 const inputMessage = document.querySelector("#input-message");
-inputMessage.addEventListener("change", () => {
-  const contactForm = document.querySelector("#contact-form");
-  contactForm.classList.add("was-validated");
-});
+inputMessage.addEventListener("change", showFormValidationMessages);
