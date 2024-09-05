@@ -147,11 +147,11 @@ const animateSectionHandler = (sectionId) => {
   if (getWindowPosition() > sectionTop) {
     section.classList.add(`${sectionId.slice(1)}--animated`);
   }
-}
+};
 
 export const animateSections = () => {
   const sectionsIds = ["#about-me", "#skills", "#contact"];
   sectionsIds.forEach((sectionId) => {
     animateSectionHandler(sectionId);
   });
-}
+};

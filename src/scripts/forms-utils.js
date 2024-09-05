@@ -30,4 +30,4 @@ export const sendFormData = async (button) => {
   email = "";
   message = "";
   button.disabled = true;
-}
+};
