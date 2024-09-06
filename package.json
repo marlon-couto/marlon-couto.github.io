@@ -8,6 +8,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
+        "debug": "astro dev --host --verbosity debug",
         "format": "prettier src --write --cache --cache-strategy metadata"
     },
     "dependencies": {
